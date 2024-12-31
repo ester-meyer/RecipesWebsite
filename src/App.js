@@ -12,7 +12,7 @@ function App() {
     <>
       <Navbar/>
       {/* <SignUp/> */}
-      {/* <RecipeCard id={n}/> */}
+      {/* <RecipeCard/> */}
       <RecipeList/>
       {/* <Home/> */}
     </>

@@ -65,7 +65,7 @@ const initialValue = {
             ],
             Instructions: "Prepare the glass: Melt some chocolate (in the microwave or using a double boiler). Dip the rim of the glass in the melted chocolate and let it drip down the sides. You can also add cookie crumbs or colorful sprinkles to the chocolate before it hardens. Make the shake: In a food processor or blender, combine the milk, chocolate ice cream, cocoa powder, chocolate syrup, and ice until smooth and thick. Assemble: Pour the milkshake into the prepared glass. Add a generous layer of whipped cream on top. Insert a chocolate bar for decoration. Dust with grated chocolate or cocoa powder. Serve: Serve immediately and enjoy!",
             category: categoryEnum.DAIRY,
-            image: '/cakes/22.jpg',
+            image: '/cakes/333.jpg',
             isFavorite: false
         },
         {
@@ -172,7 +172,7 @@ const initialValue = {
             ],
             "instructions": "Prepare the base:\nPreheat the oven to 350°F (175°C).\nMix flour, sugar, cocoa powder, and salt in a bowl.\nAdd butter and mix until a dough forms.\nRoll out the dough and cut into small round shapes (use a cookie cutter).\nPlace on a baking tray and bake for 8–10 minutes. Let cool completely.\nMake the marshmallow topping:\nIn a saucepan, combine sugar, water, and corn syrup. Heat until the mixture reaches 240°F (115°C) (soft-ball stage).\nIn a separate bowl, whip egg whites until soft peaks form.\nSlowly pour the hot sugar syrup into the egg whites while continuing to whip. Add vanilla extract and whip until thick and glossy.\nPipe the marshmallow mixture onto the cooled cookie bases using a piping bag.\nAdd the chocolate coating:\nMelt the chocolate chips and coconut oil in a microwave or double boiler until smooth.\nDip or drizzle the chocolate over the marshmallow-topped cookies.\nLet the treats set at room temperature or in the refrigerator.",
             "category": "COOKIES",
-            "image": "/cakes/diliara-garifullina-fbdgjpKG1aU-unsplash.jpg",
+            "image": "/cakes/diliara-garifullina-2sjp6dNm1Nk-unsplash.jpg",
             "isFavorite": false
         },
         {
@@ -233,8 +233,103 @@ const initialValue = {
             "category": "DESSERTS",
             "image": "/cakes/fallon-michael-Fde8e30pJL4-unsplash.jpg",
             "isFavorite": false
-        }
+        },
+        {
+            "id": 111,
+            "name": "Chocolate Souffle",
+            "preparationTime": 25,
+            "bakingTime": 18,
+            "ingredients": [
+                "4 ounces bittersweet chocolate, finely chopped",
+                "2 tablespoons unsalted butter, plus more for ramekins",
+                "1/4 cup granulated sugar, plus more for ramekins",
+                "3 large eggs, separated",
+                "1/4 teaspoon cream of tartar",
+                "Pinch of salt",
+                "1/2 teaspoon vanilla extract"
+            ],
+            "instructions": "Preheat oven to 375°F (190°C). Butter and sugar four 6-ounce ramekins.\nMelt chocolate and 2 tablespoons butter in a double boiler or microwave, stirring until smooth.\nIn a large bowl, whisk egg yolks and 1/4 cup sugar until pale and thick. Whisk in melted chocolate mixture and vanilla extract.\nIn a separate clean bowl, beat egg whites with cream of tartar and salt until stiff peaks form.\nGently fold one-third of the beaten egg whites into the chocolate mixture to lighten it. Then, gently fold in the remaining egg whites until just combined.\nDivide the batter evenly among the prepared ramekins.\nBake for 15-18 minutes, or until the soufflés are puffed and the centers are still slightly moist.\nServe immediately.",
+            "category": "DESSERTS",
+            "image": "/cakes/marine-dumay-Zjs4aHL3uRU-unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 112,
+            "name": "Raspberry Popsicle",
+            "preparationTime": 15,
+            "ingredients": [
+                "300g fresh raspberries",
+                "200ml water",
+                "2 tablespoons honey or sugar (adjust to taste)",
+                "1 tablespoon lemon juice"
+            ],
+            "instructions": "1. Blend the raspberries, water, honey (or sugar), and lemon juice until smooth.\n2. Strain the mixture through a fine mesh sieve to remove seeds (optional).\n3. Pour the mixture into popsicle molds.\n4. Insert popsicle sticks and freeze for at least 4–6 hours, or until solid.\n5. To release the popsicles, run the molds under warm water for a few seconds and gently pull out the popsicles.",
+            "category": "DESSERTS",
+            "image": "/cakes/pablo-merchan-montes-MXovqM130UI-unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 113,
+            "name": "Cherry Cheesecake",
+            "preparationTime": 90,
+            "ingredients": [
+                "200g digestive biscuits (or graham crackers)",
+                "100g melted butter",
+                "500g cream cheese",
+                "200g sour cream",
+                "150g sugar",
+                "3 large eggs",
+                "1 teaspoon vanilla extract",
+                "200g fresh or canned cherries (pitted)",
+                "2 tablespoons cherry jam (optional, for glaze)"
+            ],
+            "instructions": "1. Preheat the oven to 160°C (320°F) and line the base of a springform cake tin with baking paper.\n2. Crush the biscuits into fine crumbs and mix with the melted butter. Press the mixture into the base of the tin to form the crust. Chill in the fridge while preparing the filling.\n3. In a large bowl, beat the cream cheese, sour cream, and sugar until smooth. Add eggs one at a time, then mix in the vanilla extract.\n4. Pour the filling over the crust and bake for 50–60 minutes, or until the center is set but slightly wobbly.\n5. Let the cheesecake cool to room temperature, then refrigerate for at least 4 hours or overnight.\n6. Arrange the cherries on top of the chilled cheesecake. Optionally, warm the cherry jam slightly and brush over the cherries for a glossy finish.\n7. Slice and serve chilled.",
+            "category": "DESSERTS",
+            "image": "/cakes/1.jpg",
+            "isFavorite": false
+        },
         
+        {
+            "id": 114,
+            "name": "Chocolate Chip Cookies",
+            "preparationTime": 30,
+            "ingredients": [
+                "200g unsalted butter, softened",
+                "150g brown sugar",
+                "100g white sugar",
+                "2 large eggs",
+                "1 teaspoon vanilla extract",
+                "300g all-purpose flour",
+                "1 teaspoon baking soda",
+                "1/2 teaspoon salt",
+                "200g chocolate chips (milk or dark, as preferred)"
+            ],
+            "instructions": "1. Preheat the oven to 180°C (350°F) and line two baking sheets with parchment paper.\n2. In a large bowl, cream together the softened butter, brown sugar, and white sugar until light and fluffy.\n3. Beat in the eggs one at a time, then stir in the vanilla extract.\n4. In a separate bowl, whisk together the flour, baking soda, and salt. Gradually mix the dry ingredients into the wet ingredients until a dough forms.\n5. Fold in the chocolate chips until evenly distributed.\n6. Drop spoonfuls of dough onto the prepared baking sheets, leaving space between each cookie.\n7. Bake for 10-12 minutes, or until the edges are golden brown but the centers are still soft.\n8. Allow the cookies to cool on the baking sheets for 5 minutes before transferring to a wire rack to cool completely. Serve and enjoy!",
+            "category": "SNACKS",
+            "image": "/cakes/food-photographer-jennifer-pallian-OfdDiqx8Cz8-unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 115,
+            "name": "Basic Croissant",
+            "preparationTime": 60,
+            "restingTime": 180,
+            "bakingTime": 20,
+            "ingredients": [
+                "500g strong white bread flour",
+                "10g dry yeast (or 25g fresh yeast)",
+                "50g sugar",
+                "10g salt",
+                "250ml lukewarm milk",
+                "125ml cold water",
+                "250g very cold butter",
+                "1 beaten egg"
+            ],
+            "instructions": "In a mixer bowl, mix flour, yeast, sugar, and salt.\nAdd milk and water and knead until a smooth dough forms.\nLet the dough rise for about an hour.\nRoll out the dough and refrigerate for an hour.\nRoll out the butter into a rectangle.\nPlace the butter in the center of the dough and fold like an envelope.\nRoll out and repeat the folding process two more times.\nRoll out the dough and cut triangles.\nRoll the triangles into croissants.\nLet them proof and brush with egg.\nBake at 180°C (350°F) for 15-20 minutes.",
+            "category": "Pastries",
+            "image": "/cakes/mae-mu-m9pzwmxm2rk-unsplash.jpg",
+            "isFavorite": false
+        }
     ]
 }
 
