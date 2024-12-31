@@ -12,6 +12,7 @@ export default function TeamExample() {
   return (
     <CssVarsProvider disableTransitionOnChang>
       <CssBaseline />
+      
       <Box
         sx={{
           height: '100vh',

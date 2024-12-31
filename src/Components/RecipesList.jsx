@@ -10,8 +10,10 @@ export default function RecipesList() {
   return (
     <>
     <Box sx={{ width: '100%', height: '30vh', marginBottom: 2 }}>
-        <Typography variant="h4" fontWeight="bold" align="center">
-          My Recipe List
+        <Typography variant="h4" fontWeight="bold" align="center" style={{
+          
+        }}>
+          Recipes
         </Typography>
       </Box>
     <ImageList sx={{ width: '100%', height: '100%'}} cols={5} gap={12} >

@@ -174,7 +174,67 @@ const initialValue = {
             "category": "COOKIES",
             "image": "/cakes/diliara-garifullina-fbdgjpKG1aU-unsplash.jpg",
             "isFavorite": false
+        },
+        {
+            "id": 108,
+            "name": "Berry-Topped Cheesecake Slice",
+            "preparationTime": 90,
+            "ingredients": [
+                "200g digestive biscuits, crushed",
+                "100g unsalted butter, melted",
+                "500g cream cheese, softened",
+                "200g sugar",
+                "3 large eggs",
+                "1 teaspoon vanilla extract",
+                "200ml heavy cream",
+                "150g mixed berries (e.g., raspberries, blueberries)",
+                "50g sugar (for berry topping)",
+                "1 tablespoon cornstarch",
+                "2 tablespoons water"
+            ],
+            "instructions": "Prepare the crust:\n1. Preheat the oven to 180°C (350°F).\n2. Combine crushed biscuits and melted butter in a bowl until the mixture resembles wet sand.\n3. Press the mixture into the bottom of a springform pan. Bake for 10 minutes, then let cool.\n\nMake the cheesecake filling:\n1. In a large bowl, beat the cream cheese and sugar until smooth.\n2. Add eggs one at a time, mixing well after each addition.\n3. Mix in vanilla extract and heavy cream until fully combined.\n4. Pour the filling onto the prepared crust and bake for 50–60 minutes, or until the edges are set but the center still jiggles slightly.\n5. Allow the cheesecake to cool to room temperature, then refrigerate for at least 4 hours or overnight.\n\nPrepare the berry topping:\n1. In a saucepan, combine mixed berries, sugar, cornstarch, and water.\n2. Cook over medium heat, stirring, until the mixture thickens and becomes glossy.\n3. Let the topping cool completely.\n\nAssemble:\n1. Spread the cooled berry topping over the chilled cheesecake.\n2. Slice and serve chilled.",
+            "category": "CAKES",
+            "image": "/cakes/Photo by Dessy Dimcheva on Unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 109,
+            "name": "Chocolate Raspberry Mille-Feuille",
+            "preparationTime": 120,
+            "ingredients": [
+                "200g dark chocolate, melted",
+                "200g whipping cream",
+                "50g powdered sugar",
+                "1 teaspoon vanilla extract",
+                "100g fresh raspberries",
+                "2 tablespoons raspberry jam",
+                "100g dark chocolate shavings (for garnish)"
+            ],
+            "instructions": "Prepare the chocolate layers:\n1. Melt the dark chocolate and spread it thinly onto baking parchment or silicone sheets.\n2. Allow the chocolate to cool and harden, then cut into rectangular layers.\n\nPrepare the whipped cream:\n1. In a bowl, whip the cream, powdered sugar, and vanilla extract until soft peaks form.\n\nAssemble the mille-feuille:\n1. Place one chocolate layer on a serving plate.\n2. Spread a layer of whipped cream over the chocolate and add a few fresh raspberries and a small amount of raspberry jam.\n3. Repeat the layers until you have 6–8 layers, finishing with whipped cream and fresh raspberries on top.\n\nGarnish:\n1. Sprinkle dark chocolate shavings over the top layer.\n2. Serve immediately or chill slightly before serving.",
+            "category": "DESSERTS",
+            "image": "/cakes/otto-norin-zuLYIQ-4ADQ-unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 110,
+            "name": "Caramel Chocolate Cheesecake",
+            "preparationTime": 90,
+            "ingredients": [
+                "200g graham crackers, crushed",
+                "75g unsalted butter, melted",
+                "400g cream cheese, softened",
+                "100g sugar",
+                "2 large eggs",
+                "1 teaspoon vanilla extract",
+                "100g chocolate squares (e.g., milk chocolate)",
+                "150g caramel sauce"
+            ],
+            "instructions": "Prepare the crust:\n1. Mix the crushed graham crackers and melted butter.\n2. Press the mixture into the bottom of a springform pan.\n3. Chill in the refrigerator for 10 minutes.\n\nPrepare the cheesecake filling:\n1. Preheat the oven to 160°C (320°F).\n2. In a bowl, beat the cream cheese and sugar until smooth.\n3. Add eggs one at a time, then mix in the vanilla extract.\n4. Pour the filling over the chilled crust.\n\nBake the cheesecake:\n1. Bake for 30–40 minutes until the center is set.\n2. Let the cheesecake cool to room temperature, then chill in the refrigerator for at least 2 hours.\n\nAssemble and garnish:\n1. Pour caramel sauce over the chilled cheesecake.\n2. Place chocolate squares on top, forming a decorative layer.\n3. Serve immediately or chill for an additional 30 minutes before serving.",
+            "category": "DESSERTS",
+            "image": "/cakes/fallon-michael-Fde8e30pJL4-unsplash.jpg",
+            "isFavorite": false
         }
+        
     ]
 }
 
