@@ -5,15 +5,15 @@ import Home from './Components/home'
 import LogIn from './Components/LogIn'
 import SignUp from './Components/SignUp'
 import RecipeCard from './Components/RecipeCard'
-import RecipesList from './Components/RecipesList';
+import RecipeList from './Components/RecipesList'
 function App() {
-  const n=100;
+  const n=105;
   return (
     <>
       <Navbar/>
       {/* <SignUp/> */}
       {/* <RecipeCard id={n}/> */}
-      <RecipesList/>
+      <RecipeList/>
       {/* <Home/> */}
     </>
   );
