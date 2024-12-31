@@ -12,8 +12,8 @@ function App() {
     <>
       <Navbar/>
       {/* <SignUp/> */}
-      {/* <RecipeCard id={n}/> */}
-      <RecipeList/>
+      <RecipeCard id={n}/>
+      {/* <RecipeList/> */}
       {/* <Home/> */}
     </>
   );
