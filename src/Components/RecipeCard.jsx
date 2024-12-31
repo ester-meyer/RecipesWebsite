@@ -36,7 +36,7 @@ export default function RecipeCard() {
 
     // const id = useParams().id;
     // alert(id)
-    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==102)
+    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==100)
 
   return (
     <CssVarsProvider >
@@ -101,10 +101,16 @@ export default function RecipeCard() {
             }}
           >
            
-                <Typography component="h1" level="h3" sx={{color:'rgb(208, 0, 64)', display:'flex'}}>
-                  {recipe.name}
+                <Typography component="h1" level="h3" sx={{  display: 'flex', justifyContent: 'space-between', marginTop:'13%'}}>
+                  <label sx={{color:'rgb(208, 0, 64)'}}>{recipe.name}</label>
 
-                  <AccessTimeFilledIcon/>
+                  <label style={{display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'}}>
+                    {recipe.preparationTime}    
+                  <AccessTimeFilledIcon sx={{color:'rgb(208, 0, 64)'}}/>
+                  </label>
+
                 </Typography>
                 
 
@@ -125,7 +131,10 @@ export default function RecipeCard() {
       >
         Ingredients
       </Typography>
-      <List aria-labelledby="decorated-list-demo">
+      <List aria-labelledby="decorated-list-demo" sx={{ /* מספר העמודות */
+  columnGap: '20px', /* רווח בין העמודות */
+  height: '300px', /* גובה מקסימלי */
+  overflowY: 'auto'}}>
         
           {  recipe.ingredients.map((ingredient)=>(
           <ListItem>
@@ -134,6 +143,10 @@ export default function RecipeCard() {
         ))}
        
       </List>
+
+      <label>
+        {recipe.Instructions}
+      </label>
             </Stack>
           </Box>
           <Box component="footer" sx={{ py: 3 }}>
