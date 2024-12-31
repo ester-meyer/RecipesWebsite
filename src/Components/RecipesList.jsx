@@ -8,15 +8,15 @@ import { Typography, Box } from '@mui/material';
 export default function RecipesList() {
     const reciepes=useSelector(slices=>slices.RecipesSlice).recipes;
   return (
-    <>
-    <Box sx={{ width: '100%', height: '30vh', marginBottom: 2 }}>
+    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+    <Box sx={{ width: '100%', height: '30vh', marginBottom: 2}}>
         <Typography variant="h4" fontWeight="bold" align="center" style={{
-          
+
         }}>
           Recipes
         </Typography>
       </Box>
-    <ImageList sx={{ width: '100%', height: '100%'}} cols={5} gap={12} >
+    <ImageList sx={{ width: '95%', height: '100%'}} cols={5} gap={12} >
       {reciepes.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -33,7 +33,7 @@ export default function RecipesList() {
         </ImageListItem>
       ))}
     </ImageList>
-    </>
+    </div>
     
   );
 }
