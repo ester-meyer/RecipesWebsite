@@ -177,7 +177,7 @@ export default function JoySignInSideTemplate() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundImage: 
-            `url('/cakes/for_login_page.png)`,
+            `url('/cakes/for_login_page.png')`,
 
         })}
       />
