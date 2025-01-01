@@ -7,13 +7,13 @@ import SignUp from './Components/SignUp'
 import RecipeCard from './Components/RecipeCard'
 import RecipeList from './Components/RecipesList'
 function App() {
-  const n=105;
+  const n=111;
   return (
     <>
       <Navbar/>
       {/* <SignUp/> */}
-      <RecipeCard id={n}/>
-      {/* <RecipeList/> */}
+      {/* <RecipeCard/> */}
+      <RecipeList/>
       {/* <Home/> */}
     </>
   );
