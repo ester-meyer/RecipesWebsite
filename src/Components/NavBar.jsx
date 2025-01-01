@@ -4,10 +4,13 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import { useSelector } from 'react-redux';
+import Tooltip from '@mui/material/Tooltip';
 import Logo from '../Images/logo.png'
 
 export default function MenuAppBar() {
 
+  const user = useSelector((state)=>state.userSlice)
 
 
   const handleLogo = (event) => {
@@ -31,7 +34,7 @@ export default function MenuAppBar() {
             <img src={Logo} style={{height:'2em'}} />
             {/* <MenuIcon /> */}
           </IconButton>
-   
+          <Tooltip title={user.mame} arrow>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -40,8 +43,9 @@ export default function MenuAppBar() {
                 onClick={handleUser}
                 color="red"
               >
-                <AccountCircle style={{height:'1em'}}/>
+                  <AccountCircle style={{height:'1em'}}/>
               </IconButton>
+            </Tooltip>
               
           
         </Toolbar>

@@ -459,7 +459,6 @@ const recipesSlice=createSlice({
             state.recipes.push(action.payload);
         },
         ToggleFavorite:(state, action)=>{
-            debugger
             const recipe=state.recipes.find((recipe)=>recipe.id === action.payload.id)
             recipe.isFavorite=!recipe.isFavorite
         }
