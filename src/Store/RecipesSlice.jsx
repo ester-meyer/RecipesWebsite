@@ -244,6 +244,10 @@ const recipesSlice=createSlice({
     reducers:{
         addReciepe:(state, action)=>{
             state.recipes.push(action.payload);
+        },
+        ToggleFavorite:(state, action)=>{
+            const recipe=state.recipes.find((recipe)=>recipe.id === action.payload.id)
+            recipe.isFavorite=!recipe.isFavorite
         }
     }
 })
