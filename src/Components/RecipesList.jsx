@@ -38,14 +38,14 @@ export default function RecipesList() {
         }}>
           Recipes
         </h1>
-        {/* <p style={{
+        <p style={{
           width: '30%',
           fontSize: '1em',
           textAlign: 'center',
           margin: '5px 0 0 0', // מרווח עליון מינימלי לפסקה
         }}>
           Discover rich cakes and creamy milkshakes. Simple steps, delicious results—make every moment a sweet celebration!
-        </p> */}
+        </p>
         <Button
           variant="solid"
           size="lg"

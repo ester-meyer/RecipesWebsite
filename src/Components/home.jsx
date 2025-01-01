@@ -36,7 +36,7 @@ export default function TeamExample() {
       >
       GOOD THINGS ARE BAKED HERE.
       <br/>
-      YAMMY.
+      YUMMY.
       </Typography>
       <Typography
         textColor="text.secondary"
