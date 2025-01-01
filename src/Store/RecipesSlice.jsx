@@ -329,7 +329,107 @@ const initialValue = {
             "category": "Pastries",
             "image": "/cakes/mae-mu-m9pzwmxm2rk-unsplash.jpg",
             "isFavorite": false
-        }
+        },
+        {
+            "id": 116,
+            "name": "Tall Round Chocolate Cake with Strawberry Cream",
+            "preparationTime": 30,
+            "bakingTime": 35,
+            "ingredients": [
+                "2 cups (250g) all-purpose flour",
+                "¾ cup (75g) unsweetened cocoa powder",
+                "1 ½ teaspoons baking powder",
+                "1 ½ teaspoons baking soda",
+                "½ teaspoon salt",
+                "2 cups (400g) granulated sugar",
+                "2 large eggs",
+                "1 cup (240ml) buttermilk",
+                "½ cup (120ml) vegetable oil",
+                "2 teaspoons vanilla extract",
+                "1 cup (240ml) boiling water",
+                "1 cup (240ml) heavy cream",
+                "½ cup (60g) powdered sugar",
+                "1 teaspoon vanilla extract",
+                "1 cup (150g) fresh strawberries, hulled and sliced"
+            ],
+            "instructions": "Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.\nWhisk together flour, cocoa powder, baking powder, baking soda, and salt.\nIn a separate bowl, whisk together sugar, eggs, buttermilk, oil, and vanilla extract.\nAdd dry ingredients to wet ingredients, mixing until just combined.\nPour in boiling water and mix until smooth.\nDivide batter between cake pans.\nBake for 30-35 minutes.\nLet cakes cool completely.\nBeat heavy cream until soft peaks form.\nAdd powdered sugar and vanilla and beat until stiff peaks form.\nGently fold in sliced strawberries.\nAssemble the cake: Layer cake, cream, and then the top layer. Decorate with strawberries if desired.",
+            "category": "Cakes",
+            "image": "/cakes/odiseo-castrejon-LTaNflncXV0-unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 117,
+            "name": "Raspberry Swirl Cheesecake with Crumble",
+            "preparationTime": 45,
+            "bakingTime": 70,
+            "restingTime": 300,
+            "ingredients": [
+                "1 ½ cups (180g) graham cracker crumbs",
+                "5 tablespoons (70g) unsalted butter, melted",
+                "2 tablespoons (25g) granulated sugar",
+                "32 ounces (900g) cream cheese, softened",
+                "1 ¾ cups (350g) granulated sugar",
+                "1/4 cup (30g) all-purpose flour",
+                "1 teaspoon vanilla extract",
+                "4 large eggs",
+                "1 cup (240ml) sour cream",
+                "1 cup (150g) fresh or frozen raspberries",
+                "2 tablespoons (30g) granulated sugar",
+                "1 tablespoon (15ml) lemon juice",
+                "1 cup (120g) all-purpose flour",
+                "½ cup (100g) granulated sugar",
+                "½ cup (115g) cold unsalted butter"
+            ],
+            "instructions": "Preheat oven to 350°F (175°C). Make the crust: Combine crumbs, butter, and sugar. Press into pan. Bake 8-10 min. Let cool. Make raspberry swirl: Combine raspberries, sugar, and lemon juice. Cook until sauce forms. Strain. Cool. Make filling: Beat cream cheese, sugar, and flour. Mix in vanilla, eggs, and sour cream. Make crumble: Combine flour and sugar. Cut in butter. Assemble: Pour half filling, swirl half sauce, remaining filling, swirl remaining sauce, sprinkle crumble. Bake 55-70 min. Cool in oven 1 hour, then chill 4+ hours.",
+            "category": "Cheesecakes",
+            "image": "/cakes/101.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 118,
+            "name": "Layered Chocolate Nut Cake",
+            "preparationTime": 30,
+            "bakingTime": 35,
+            "ingredients": [
+                "2 cups (250g) all-purpose flour",
+                "¾ cup (75g) unsweetened cocoa powder",
+                "1 ½ teaspoons baking powder",
+                "1 ½ teaspoons baking soda",
+                "½ teaspoon salt",
+                "2 cups (400g) granulated sugar",
+                "2 large eggs",
+                "1 cup (240ml) buttermilk",
+                "½ cup (120ml) vegetable oil",
+                "2 teaspoons vanilla extract",
+                "1 cup (240ml) boiling water",
+                "1 cup (225g) unsalted butter, softened",
+                "3 cups (375g) powdered sugar",
+                "½ cup (60g) unsweetened cocoa powder",
+                "½ cup (120ml) milk",
+                "1 teaspoon vanilla extract",
+                "1 cup (120g) mixed nuts, chopped"
+            ],
+            "instructions": "Preheat oven to 350°F (175°C). Grease and flour two 9-inch pans.\nWhisk dry ingredients.\nWhisk wet ingredients (except boiling water).\nCombine wet and dry ingredients.\nAdd boiling water and mix.\nDivide batter into pans and bake 30-35 min.\nCool cakes completely.\nBeat butter for frosting. Add sugar and cocoa. Add milk and vanilla. Beat until fluffy.\nAssemble cake: Layer cake, frosting, top layer, remaining frosting, and nuts.",
+            "category": "Cakes",
+            "image": "/cakes/afif-ramdhasuma-YsgHMllRWxc-unsplash.jpg",
+            "isFavorite": false
+        },
+        {
+            "id": 119,
+            "name": "Strawberry Smoothie",
+            "preparationTime": 5,
+            "ingredients": [
+              "1 cup (150g) fresh or frozen strawberries",
+              "½ cup (120ml) milk (dairy or non-dairy)",
+              "½ cup (120g) plain yogurt (optional)",
+              "1 tablespoon honey or maple syrup (optional)",
+              "½ cup (60g) ice cubes (optional)"
+            ],
+            "instructions": "Combine all ingredients in a blender. Blend until smooth. Pour into a glass and enjoy!",
+            "category": "Smoothies",
+            "image": "/cakes/victoria-JGK2EWz6iAE-unsplash.jpg",
+            "isFavorite": false
+          }
     ]
 }
 
@@ -339,9 +439,14 @@ const recipesSlice=createSlice({
     reducers:{
         addReciepe:(state, action)=>{
             state.recipes.push(action.payload);
+        },
+        ToggleFavorite:(state, action)=>{
+            debugger
+            const recipe=state.recipes.find((recipe)=>recipe.id === action.payload.id)
+            recipe.isFavorite=!recipe.isFavorite
         }
     }
 })
 
-export const {addReciepe} = recipesSlice.actions
+export const {addReciepe, ToggleFavorite} = recipesSlice.actions
 export default recipesSlice.reducer

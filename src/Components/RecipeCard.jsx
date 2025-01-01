@@ -36,7 +36,7 @@ export default function RecipeCard() {
 
     // const id = useParams().id;
     // alert(id)
-    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==100)
+    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==109)
 
   return (
     <CssVarsProvider >
