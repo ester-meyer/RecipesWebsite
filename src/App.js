@@ -6,15 +6,17 @@ import LogIn from './Components/LogIn'
 import SignUp from './Components/SignUp'
 import RecipeCard from './Components/RecipeCard'
 import RecipeList from './Components/RecipesList'
+import AddRecipe from './Components/AddRecipe'
 function App() {
   const n=111;
   return (
     <>
       <Navbar/>
-      <SignUp/>
+      {/* <SignUp/> */}
       {/* <RecipeCard/> */}
       {/* <RecipeList/> */}
       {/* <Home/> */}
+      <AddRecipe/>
     </>
   );
 }

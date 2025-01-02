@@ -125,7 +125,7 @@ export default function JoySignInSideTemplate() {
               >
                 <FormControl required>
                    <FormLabel>Name</FormLabel>
-                    <Input type="text" name="userName" inputRef={(input) => (input ? input.name = 'userName' : null)} />
+                    <Input type="text" name="userName" />
                   </FormControl>
                 <FormControl required>
                   <FormLabel>Email</FormLabel>
