@@ -80,7 +80,7 @@ export default function RecipeCard() {
           </Box>
           <Box component="footer" sx={{ py: 3 }}>
             <Typography level="body-xs" sx={{ textAlign: 'center' }}>
-              © YammY {new Date().getFullYear()}
+              © YummY {new Date().getFullYear()}
             </Typography>
           </Box>
         </Box>
