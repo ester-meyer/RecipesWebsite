@@ -4,20 +4,17 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import GlobalStyles from '@mui/joy/GlobalStyles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
-import {useDispatch, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 import { useParams } from 'react-router-dom';
 import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
-
 import TimeIcon from './RecipePage/TimeIcon'
 import Body from './RecipePage/Body';
 
 export default function RecipeCard() {
 
-    // const id = useParams().id;
-    // alert(id)
-    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==102)
-
+    const id = useParams().id;
+    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
 
   return (
     <CssVarsProvider >
@@ -41,7 +38,6 @@ export default function RecipeCard() {
           justifyContent: 'flex-end',
           backdropFilter: 'blur(12px)',
           backgroundColor: 'rgba(255 255 255 / 0.2)',
-         
         })}
       >
         <Box

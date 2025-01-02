@@ -14,56 +14,56 @@ import Input from '@mui/joy/Input';
 const steps = [
   {
     label: 'insert name and image',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
     inputes: [
         {
-            name: 'name',
             instraction: 'Enter recipe name',
-            type: 'text',
+            input: "<Input type='text' name='name' sx={{marginBottom: '20px'}} />",
         },
         {
-            name: 'image',
             instraction: 'Upload image',
-            type: 'file',
+            input: "<Input type='file' accept='image/*' name='name' sx={{marginBottom: '20px'}} />",
         },
       ],
   },
   {
-    label: 'insert name and image',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: 'Ingredients and instructions',
     inputes: [
         {
-            name: 'name',
-            instraction: 'Enter recipe name',
-            type: 'text',
+          instraction: 'Enter recipe ingredients (separated by commas)',
+          input: '<textarea name="ingredients"/>'
         },
         {
-            name: 'image',
-            instraction: 'Upload image',
-            type: 'file',
+          instraction: 'Enter recipe instructions',
+          input: '<textarea name="instructions"/>'
         },
       ],
   },
   {
-    label: 'insert name and image',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: 'More details',
     inputes: [
         {
-            name: 'name',
-            instraction: 'Enter recipe name',
-            type: 'text',
+            name: 'preparationTime',
+            instraction: 'Enter preparation time',
+            input: "<Input type='number' name='preparationTime'/>",
         },
         {
-            name: 'image',
+            name: 'category',
             instraction: 'Upload image',
-            type: 'file',
-        },
+            type: 'text',
+            input: (<Select
+              value={age}
+              onChange={handleChange}
+              displayEmpty
+              inputProps={{ 'aria-label': 'Without label' }}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>)
+          },
       ],
   }
 ];
@@ -85,16 +85,17 @@ export default function VerticalLinearStepper() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-      const formValues = {};
-      formData.forEach((value, key) => {
-        formValues[key] = value;
-      });
-      data.current.value={...formValues,  ...data.current.value}
+    const form = e.target;
+    const formData = new FormData(form);
+    const formValues = {};
+    formData.forEach((value, key) => {
+      formValues[key] = value instanceof File ? URL.createObjectURL(value) : value;
+    });
+    data.current.value={...formValues,  ...data.current.value}
+    if(activeStep === steps.length-1)
+      alert(JSON.stringify(data.current.value, null, 2));
     handleNext()
   }
-
   return (
     <Box
         sx={{
@@ -130,7 +131,7 @@ export default function VerticalLinearStepper() {
                     {step.inputes.map((input, index) => (                      
                         <FormControl key={index} required >
                             <FormLabel>{input.instraction}</FormLabel>
-                            <Input type={input.type} name={input.name} sx={{marginBottom: '20px'}}/>
+                            <Input type={input.type} name={input.name} sx={{marginBottom: '20px'}} rows={input.rows}/>
                         </FormControl>))}
                     <Box sx={{ mb: 2 }}>
                         <Button

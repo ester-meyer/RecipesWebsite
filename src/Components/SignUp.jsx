@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { CssVarsProvider, extendTheme, useColorScheme } from '@mui/joy/styles';
-import GlobalStyles from '@mui/joy/GlobalStyles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
@@ -8,19 +7,15 @@ import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
-import IconButton from '@mui/joy/IconButton';
-import Link from '@mui/joy/Link';
 import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 import Stack from '@mui/joy/Stack';
-// import {Link} from 'react-router-dom'
 import GoogleIcon from './GoogleIcon';
 import {useDispatch} from "react-redux"
 import {createUser} from '../Store/UserSlice'
 import Snackbar from '@mui/joy/Snackbar';
-import DoneIcon from '@mui/icons-material/Done';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { useNavigate } from 'react-router-dom';
-
 export default function JoySignInSideTemplate() {
 
 const navigate = useNavigate()
@@ -96,7 +91,7 @@ const navigate = useNavigate()
                 color="neutral"
                 fullWidth
                 startDecorator={<GoogleIcon />}
-                onClick={() => { alert("Sorry, try a different way!") }}
+                onClick={() => {setOpen(true); }}
               >
                 Continue with Google
               </Button>
@@ -122,8 +117,6 @@ const navigate = useNavigate()
                     persistent: formElements.persistent.checked,
                   };
                   dispatch(createUser(data))
-                  // alert(JSON.stringify(data, null, 3));
-                  setOpen(true);
                   navigate('/RecipeList')
                 }}
               >
@@ -192,23 +185,23 @@ const navigate = useNavigate()
       />
       <Snackbar
         variant="soft"
-        color="success"
+        color="danger"
         open={open}
         onClose={() => setOpen(false)}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        startDecorator={<DoneIcon />}
+        startDecorator={<ErrorOutlineIcon />}
         endDecorator={
           <Button
             onClick={() => setOpen(false)}
             size="sm"
             variant="soft"
-            color="success"
+            color="danger"
           >
             Dismiss
           </Button>
         }
       >
-        User signed up successfully.
+        Signing up via Google is no longer available.
       </Snackbar>
     </CssVarsProvider>
   );

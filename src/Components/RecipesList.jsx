@@ -6,7 +6,6 @@ import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import IconButton from '@mui/joy/IconButton';
 import AspectRatio from '@mui/joy/AspectRatio';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import FlatwareIcon from '@mui/icons-material/Flatware';
@@ -18,6 +17,7 @@ export default function RecipesList() {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const reciepes = useSelector(slices => slices.RecipesSlice).recipes;
+  const nevigate = useNavigate()
   function handleToggleFavorite(id) {
     dispatch(ToggleFavorite({ id }))
   }
@@ -37,7 +37,7 @@ export default function RecipesList() {
           width: '100%',
           fontSize: '3em',
           textAlign: 'center',
-          margin: '0', // ביטול מרווח מובנה של הכותרת
+          margin: '0',
         }}>
           Recipes
         </h1>
@@ -45,7 +45,7 @@ export default function RecipesList() {
           width: '30%',
           fontSize: '1em',
           textAlign: 'center',
-          margin: '5px 0 0 0', // מרווח עליון מינימלי לפסקה
+          margin: '5px 0 0 0', 
         }}>
           Discover rich cakes and creamy milkshakes. Simple steps, delicious results—make every moment a sweet celebration!
         </p>
@@ -53,6 +53,7 @@ export default function RecipesList() {
           variant="solid"
           size="lg"
           aria-label="Explore"
+          onClick={() =>{nevigate('/AddRecipe')}}
           sx={{
             position: 'absolute',
             bottom: '10px',
@@ -78,7 +79,6 @@ export default function RecipesList() {
                 <IconButton
                   aria-label="FavoriteBorder"
                   variant="plain"
-                  // color="neutral"
                   size="sm"
                   sx={{
                     position: 'absolute',

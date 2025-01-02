@@ -11,9 +11,7 @@ import { ToggleFavorite } from '../../Store/RecipesSlice';
 
 export default function Body({recipe}){
 
-  //jast for now
 
-  // alert(JSON.stringify(recipe, null, 2))
   const dispatch = useDispatch()
 
   function handleToggleFavorite(id){

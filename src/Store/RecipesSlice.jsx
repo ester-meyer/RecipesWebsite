@@ -29,14 +29,12 @@ const initialValue = {
           {
             "id": 101,
             "name": "Classic Apple Pie",
-            "preparationTime": 45, // Plus chilling time for the dough (at least 1 hour)
+            "preparationTime": 45,
             "ingredients": [
-                // Crust
                 "2 1/2 cups all-purpose flour",
                 "1 teaspoon salt",
                 "1 cup (2 sticks) unsalted butter, very cold and cubed",
                 "1/2 cup ice water",
-                // Filling
                 "6-8 medium apples (such as Granny Smith, Honeycrisp, or Gala), peeled, cored, and sliced",
                 "3/4 cup granulated sugar",
                 "1/4 cup all-purpose flour",
@@ -45,11 +43,10 @@ const initialValue = {
                 "1/4 teaspoon ground allspice (optional)",
                 "1 tablespoon lemon juice",
                 "2 tablespoons unsalted butter, cut into small pieces",
-                // Egg Wash (Optional)
                 "1 egg, beaten",
                 "1 tablespoon milk or water"
             ],
-            "Instructions": [
+            "instructions": [
                 "Make the crust: In a large bowl, whisk together the flour and salt. Cut in the cold butter using a pastry blender or your fingertips until the mixture resembles coarse crumbs with some larger butter pieces remaining. Gradually add the ice water, mixing until the dough just comes together. Form the dough into a disc, wrap tightly in plastic wrap, and chill in the refrigerator for at least 1 hour, or up to overnight.",
                 "Make the filling: In a large bowl, combine the apple slices, sugar, flour, cinnamon, nutmeg, allspice (if using), and lemon juice. Toss to combine. Preheat oven to 400°F (200°C).",
                 "Assemble the pie: On a lightly floured surface, roll out half of the dough into a 12-inch circle. Carefully transfer the dough to a 9-inch pie plate. Pour the apple filling into the crust and dot with the small pieces of butter. Roll out the remaining dough into a 10-inch circle. Cut into strips and arrange them over the filling in a lattice pattern, or place the whole circle on top and cut slits for venting. Crimp the edges of the crust.",
@@ -57,7 +54,7 @@ const initialValue = {
                 "Bake: Bake for 45-55 minutes, or until the crust is golden brown and the filling is bubbly. If the crust starts to brown too quickly, cover the edges with foil. Let the pie cool completely on a wire rack before serving."
                 ],
             "category": categoryEnum.VEGAN,
-            "image": "../cakes/Photo by Diliara Garifullina on Unsplash.jpg", // Replace with appropriate image path
+            "image": "../cakes/aples.jpg",
             "isFavorite": false
         },
         {
@@ -146,7 +143,7 @@ const initialValue = {
                 "1 egg, beaten (for egg wash)",
                 "1 tablespoon granulated sugar (for sprinkling)"
             ],
-            Instructions: "Make the crust: In a large bowl, whisk together the flour and salt. Cut in the cold butter using a pastry blender or your fingertips until the mixture resembles coarse crumbs. Gradually add the ice water, mixing until the dough just comes together. Form the dough into a disc, wrap in plastic wrap, and chill in the refrigerator for at least 2 hours. Make the filling: In a large bowl, combine the cherries, sugar, cornstarch, almond extract (if using), and lemon juice. Gently toss to combine. Preheat oven to 400°F (200°C). On a lightly floured surface, roll out half of the dough into a 12-inch circle. Transfer the dough to a 9-inch pie plate. Pour the cherry filling into the crust. Roll out the remaining dough into a 10-inch circle. Cut into strips and arrange them over the filling in a lattice pattern, or place the whole circle on top and cut slits for venting. Crimp the edges of the crust. Brush the crust with the beaten egg and sprinkle with sugar. Bake for 45-55 minutes, or until the crust is golden brown and the filling is bubbly. Let the pie cool completely on a wire rack before serving.",
+            instructions: "Make the crust: In a large bowl, whisk together the flour and salt. Cut in the cold butter using a pastry blender or your fingertips until the mixture resembles coarse crumbs. Gradually add the ice water, mixing until the dough just comes together. Form the dough into a disc, wrap in plastic wrap, and chill in the refrigerator for at least 2 hours. Make the filling: In a large bowl, combine the cherries, sugar, cornstarch, almond extract (if using), and lemon juice. Gently toss to combine. Preheat oven to 400°F (200°C). On a lightly floured surface, roll out half of the dough into a 12-inch circle. Transfer the dough to a 9-inch pie plate. Pour the cherry filling into the crust. Roll out the remaining dough into a 10-inch circle. Cut into strips and arrange them over the filling in a lattice pattern, or place the whole circle on top and cut slits for venting. Crimp the edges of the crust. Brush the crust with the beaten egg and sprinkle with sugar. Bake for 45-55 minutes, or until the crust is golden brown and the filling is bubbly. Let the pie cool completely on a wire rack before serving.",
             category: categoryEnum.VEGAN,
             image: '/cakes/red.jpg',
             isFavorite: false
@@ -344,7 +341,7 @@ const initialValue = {
                 "1 beaten egg"
             ],
             "instructions": "In a mixer bowl, mix flour, yeast, sugar, and salt.\nAdd milk and water and knead until a smooth dough forms.\nLet the dough rise for about an hour.\nRoll out the dough and refrigerate for an hour.\nRoll out the butter into a rectangle.\nPlace the butter in the center of the dough and fold like an envelope.\nRoll out and repeat the folding process two more times.\nRoll out the dough and cut triangles.\nRoll the triangles into croissants.\nLet them proof and brush with egg.\nBake at 180°C (350°F) for 15-20 minutes.",
-            "category": categoryEnum.VEGAN,
+            "category": categoryEnum.DAIRY,
             "image": "/cakes/mae-mu-m9pzwmxm2rk-unsplash.jpg",
             "isFavorite": false
         },

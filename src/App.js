@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
@@ -20,6 +19,7 @@ function App() {
         <Route path='/SignUp' element={<SignUp/>} />
         <Route path='/RecipeList' element={<RecipeList/>} />
         <Route path='/RecipeList/:id' element={<RecipeCard />} />
+        <Route path='/AddRecipe' element={<AddRecipe/>} />
       </Routes>
     </>
   );

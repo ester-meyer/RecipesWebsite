@@ -6,7 +6,6 @@ import Button from '@mui/joy/Button';
 import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import TwoSidedLayout from '../Components/TwoSidedLayout';
-// import MuiLink from '@mui/joy/Link';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 export default function Home() {
