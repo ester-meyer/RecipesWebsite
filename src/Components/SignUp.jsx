@@ -19,7 +19,12 @@ import {useDispatch} from "react-redux"
 import {createUser} from '../Store/UserSlice'
 import Snackbar from '@mui/joy/Snackbar';
 import DoneIcon from '@mui/icons-material/Done';
+import { useNavigate } from 'react-router-dom';
+
 export default function JoySignInSideTemplate() {
+
+const navigate = useNavigate()
+
   const dispatch = useDispatch()
   const [open, setOpen] = React.useState(false);
 
@@ -27,7 +32,7 @@ export default function JoySignInSideTemplate() {
     <CssVarsProvider>
       <CssBaseline />
       <Box
-        sx={(theme) => ({
+        sx={() => ({
           width: { xs: '100%', md: '50vw' },
           transition: 'width var(--Transition-duration)',
           transitionDelay: 'calc(var(--Transition-duration) + 0.1s)',
@@ -37,9 +42,7 @@ export default function JoySignInSideTemplate() {
           justifyContent: 'flex-end',
           backdropFilter: 'blur(12px)',
           backgroundColor: 'rgba(255 255 255 / 0.2)',
-          [theme.getColorSchemeSelector('dark')]: {
-            backgroundColor: 'rgba(19 19 24 / 0.4)',
-          },
+
         })}
       >
         <Box
@@ -121,6 +124,7 @@ export default function JoySignInSideTemplate() {
                   dispatch(createUser(data))
                   // alert(JSON.stringify(data, null, 3));
                   setOpen(true);
+                  navigate('/RecipeList')
                 }}
               >
                 <FormControl required>
@@ -161,7 +165,7 @@ export default function JoySignInSideTemplate() {
           {/*our choice*/}
           <Box component="footer" sx={{ py: 3 }}>
             <Typography level="body-xs" sx={{ textAlign: 'center' }}>
-              © YammY {new Date().getFullYear()}
+              © YummY {new Date().getFullYear()}
             </Typography>
           </Box>
         </Box>
