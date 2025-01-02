@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+      <AddRecipe/>
       <Navbar sx={{ zIndex: 5 }}/>
       <Routes>
         <Route path='/' element={<Home/>} />

@@ -112,7 +112,8 @@ export default function RecipesList() {
                   </Typography>
                 </div>
                 <Button
-                onClick={()=>{navigate(`/RecipeList/${recipe.id}`)}}
+                onClick={()=>{recipe =reciepes.find(recipe=>recipe.id == recipe.id); alert(JSON.stringify(recipe))
+                 navigate(`/RecipeList/${recipe.id}`)}}
                   variant="solid"
                   size="md"
                   aria-label="Explore"
