@@ -17,9 +17,11 @@ const myStore = configureStore({
   }
 })
 root.render(
+  <BrowserRouter>
     <Provider store={myStore}>  
       <App />
     </Provider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

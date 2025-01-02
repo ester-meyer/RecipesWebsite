@@ -7,34 +7,36 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import { useSelector } from 'react-redux';
 import Tooltip from '@mui/material/Tooltip';
 import Logo from '../Images/logo.png'
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function MenuAppBar() {
 
   const user = useSelector((state)=>state.userSlice)
 
-
-  const handleLogo = (event) => {
-  };
-
   const handleUser = () => {
+    if(user.name == "not-connected")
+      navigate('/SignUp')
   };
 
+  const navigate = useNavigate()
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} >
         <Toolbar>
+          <Link to='/'>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            onClick={handleLogo}
             sx={{ mr: 2 }}
           >
             <img src={Logo} style={{height:'2em'}} />
             {/* <MenuIcon /> */}
           </IconButton>
-          <Tooltip title={user.mame} arrow>
+          </Link>
+          <Tooltip title={user.name} arrow>
               <IconButton
                 size="large"
                 aria-label="account of current user"

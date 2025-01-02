@@ -1,20 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+
+
 import Navbar from './Components/NavBar'
 import Home from './Components/home'
 import LogIn from './Components/LogIn'
 import SignUp from './Components/SignUp'
 import RecipeCard from './Components/RecipeCard'
 import RecipeList from './Components/RecipesList'
+import zIndex from '@mui/material/styles/zIndex';
 function App() {
-  const n=111;
+
   return (
     <>
-      <Navbar/>
-      {/* <SignUp/> */}
-      <RecipeCard/>
-      {/* <RecipeList/> */}
-      {/* <Home/> */}
+      <Navbar sx={{ zIndex: 5 }}/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/SignUp' element={<SignUp/>} />
+        <Route path='/RecipeList' element={<RecipeList/>} />
+        <Route path='/RecipeList/:id' element={<RecipeCard />} />
+      </Routes>
     </>
   );
 }

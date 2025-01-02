@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit"
 const initialValue = {
-    name:"",
+    name:"not-connected",
     email:"",
     password:""
 }
