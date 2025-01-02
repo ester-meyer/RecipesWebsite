@@ -43,7 +43,6 @@ export default function Body({recipe}){
                 </IconButton>
                 <Typography component="h1" level="h3" sx={{color:'rgb(208, 0, 64)'}} >
                   Instructions
-
               </Typography>
               {recipe.instructions}
           </Stack>

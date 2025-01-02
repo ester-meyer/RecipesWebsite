@@ -14,9 +14,8 @@ import Body from './RecipePage/Body';
 
 export default function RecipeCard() {
 
-    // const id = useParams().id;
-    // alert(id)
-    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==102)
+    const id = useParams().id;
+    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
 
 
   return (
