@@ -17,9 +17,12 @@ import Stack from '@mui/joy/Stack';
 import GoogleIcon from './GoogleIcon';
 import {useDispatch} from "react-redux"
 import {createUser} from '../Store/UserSlice'
-
+import Snackbar from '@mui/joy/Snackbar';
+import DoneIcon from '@mui/icons-material/Done';
 export default function JoySignInSideTemplate() {
   const dispatch = useDispatch()
+  const [open, setOpen] = React.useState(false);
+
   return (
     <CssVarsProvider>
       <CssBaseline />
@@ -116,7 +119,8 @@ export default function JoySignInSideTemplate() {
                     persistent: formElements.persistent.checked,
                   };
                   dispatch(createUser(data))
-                  alert(JSON.stringify(data, null, 3));
+                  // alert(JSON.stringify(data, null, 3));
+                  setOpen(true);
                 }}
               >
                 <FormControl required>
@@ -150,6 +154,7 @@ export default function JoySignInSideTemplate() {
                     Sign up
                   </Button>
                 </Stack>
+                
               </form>
             </Stack>
           </Box>
@@ -181,6 +186,26 @@ export default function JoySignInSideTemplate() {
 
         })}
       />
+      <Snackbar
+        variant="soft"
+        color="success"
+        open={open}
+        onClose={() => setOpen(false)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        startDecorator={<DoneIcon />}
+        endDecorator={
+          <Button
+            onClick={() => setOpen(false)}
+            size="sm"
+            variant="soft"
+            color="success"
+          >
+            Dismiss
+          </Button>
+        }
+      >
+        User signed up successfully.
+      </Snackbar>
     </CssVarsProvider>
   );
 }
