@@ -19,11 +19,11 @@ const steps = [
     inputes: [
         {
             instraction: 'Enter recipe name',
-            input: "<Input type='text' name='name' sx={{marginBottom: '20px'}} />",
+            input: <Input type='text' name='name' sx={{marginBottom: '20px'}} />,
         },
         {
             instraction: 'Upload image',
-            input: "<Input type='file' accept='image/*' name='name' sx={{marginBottom: '20px'}} />",
+            input: <Input type='file' accept='image/*' name='name' sx={{marginBottom: '20px'}} />,
         },
       ],
   },
@@ -32,11 +32,11 @@ const steps = [
     inputes: [
         {
           instraction: 'Enter recipe ingredients (separated by commas)',
-          input: '<textarea name="ingredients"/>'
+          input: <textarea name="ingredients" sx={{marginBottom: "20px"}} />
         },
         {
           instraction: 'Enter recipe instructions',
-          input: '<textarea name="instructions"/>'
+          input: <textarea name="instructions" sx={{marginBottom: "20px"}} />
         },
       ],
   },
@@ -46,25 +46,25 @@ const steps = [
         {
             name: 'preparationTime',
             instraction: 'Enter preparation time',
-            input: "<Input type='number' name='preparationTime'/>",
+            input: <Input type='number' name='preparationTime' sx={{marginBottom: '20px'}} />,
         },
         {
             name: 'category',
             instraction: 'Upload image',
             type: 'text',
-            input: (<Select
-              value={age}
-              onChange={handleChange}
-              displayEmpty
-              inputProps={{ 'aria-label': 'Without label' }}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>)
+            // input: (<Select
+            //   value={age}
+            //   onChange={handleChange}
+            //   displayEmpty
+            //   inputProps={{ 'aria-label': 'Without label' }}
+            // >
+            //   <MenuItem value="">
+            //     <em>None</em>
+            //   </MenuItem>
+            //   <MenuItem value={10}>Ten</MenuItem>
+            //   <MenuItem value={20}>Twenty</MenuItem>
+            //   <MenuItem value={30}>Thirty</MenuItem>
+            // </Select>)
           },
       ],
   }
@@ -135,7 +135,7 @@ export default function VerticalLinearStepper() {
                     {step.inputes.map((input, index) => (                      
                         <FormControl key={index} required >
                             <FormLabel>{input.instraction}</FormLabel>
-                            <Input type={input.type} name={input.name} sx={{marginBottom: '20px'}} rows={input.rows}/>
+                            {input.input}
                         </FormControl>))}
                     <Box sx={{ mb: 2 }}>
                         <Button
