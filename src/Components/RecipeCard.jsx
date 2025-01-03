@@ -73,7 +73,7 @@ export default function RecipeCard() {
             }}
           >
             <TimeIcon recipr={recipe}/>      
-            <Divider >
+            <Divider>
               {recipe.category}
             </Divider>
             <Body recipe={recipe}/>
