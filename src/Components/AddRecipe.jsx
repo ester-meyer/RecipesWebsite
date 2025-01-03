@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 import { addReciepe } from '../Store/RecipesSlice';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-export default function VerticalLinearStepper() {
+export default function VerticalLinearStepper({handleClose}) {
 
 const [age, setAge] = React.useState('');
 
@@ -89,9 +89,6 @@ const steps = [
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -113,7 +110,8 @@ const steps = [
     <Box
         sx={{
             maxWidth: 400,
-            margin: '0 auto',
+            minWidth: 400,
+            margin: '1em, 4.5em, 4.5em, 0.5em',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -168,7 +166,7 @@ const steps = [
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
           <Typography>All steps completed - recipe added successfully!</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1, color: 'rgb(208, 0, 64)' }}>
+          <Button onClick={handleClose} sx={{ mt: 1, mr: 1, color: 'rgb(208, 0, 64)' }}>
             back to recipes page
           </Button>
         </Paper>

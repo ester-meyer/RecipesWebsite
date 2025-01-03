@@ -102,7 +102,6 @@ export default function RecipesList() {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        sx={{padding: '100px'}}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
           Add New Recipe
@@ -119,13 +118,8 @@ export default function RecipesList() {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <AddRecipe />
+          <AddRecipe handleClose={handleClose}/>
         </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
-          </Button>
-        </DialogActions>
       </BootstrapDialog>
 
       <Box style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', rowGap: '20px' }}>
@@ -154,7 +148,6 @@ export default function RecipesList() {
               <AspectRatio minHeight="120px" maxHeight="200px">
                 <img
                   src={recipe.image}
-                  alt=""
                 />
               </AspectRatio>
               <CardContent orientation="horizontal">

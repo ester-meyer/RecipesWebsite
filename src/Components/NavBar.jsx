@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom';
 
 export default function MenuAppBar() {
 
-  const user = useSelector((state)=>state.userSlice)
+  const user = useSelector((state) => state.userSlice)
 
   const handleUser = () => {
-    if(user.name == "not-connected")
+    if (user.name == "not-connected")
       navigate('/SignUp')
   };
 
@@ -24,34 +24,36 @@ export default function MenuAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} >
         <Toolbar>
-          <Link to='/'>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+        <Link 
+            to="/" 
+            style={{
+              textDecoration: 'none',
+              cursor: 'pointer',
+            }}
           >
-            <img src={Logo} style={{height:'2em'}} />
-            {/* <MenuIcon /> */}
-          </IconButton>
+            <img 
+              src={Logo} 
+              style={{ height: '3em', display: 'block' }} 
+              alt="Logo" 
+            />
           </Link>
           <Tooltip title={user.name} arrow>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleUser}
-                color="red"
-              >
-                  <AccountCircle style={{height:'1em'}}/>
-              </IconButton>
-            </Tooltip>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleUser}
+              sx={{color:'rgb(45, 45, 45)', marginLeft:'2%'}}
               
-          
+            >
+              <AccountCircle style={{ height: '1em' }} />
+            </IconButton>
+          </Tooltip>
+
+
         </Toolbar>
-        </AppBar>
+      </AppBar>
     </Box>
   );
 }

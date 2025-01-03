@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 
+
 export default function IngredientList() {
 
     //jast for now
@@ -20,7 +21,7 @@ export default function IngredientList() {
     <List aria-labelledby="decorated-list-demo" sx={{ columnGap: '20px', height: '300px', overflowY: 'auto' }}>
       {recipe.ingredients.map((ingredient) => (
         <ListItem>
-          <ListItemDecorator><RiceBowlIcon sx={{ color: 'rgb(208, 0, 64)' }} /></ListItemDecorator>{ingredient}
+          <ListItemDecorator><img src='/logo.png' style={{height: '1.25em'}} /></ListItemDecorator>{ingredient}
         </ListItem>
       ))}
     </List>

@@ -9,10 +9,11 @@ import IngredientList from './IngredientList';
 import { ToggleFavorite } from '../../Store/RecipesSlice';
 import { useParams } from 'react-router-dom';
 
+
 export default function Body(){
 
-  const id = useParams().id;
-  const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
+    const id = useParams().id;
+    const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
 
   const dispatch = useDispatch()
 
@@ -27,11 +28,13 @@ export default function Body(){
               <IconButton
                     aria-label="FavoriteBorder"
                     variant="plain"
-                    // color="neutral"
+                    color="neutral"
                     size='lg'
-                    sx={{ 
+                    sx={{
+                      borderRadius:'50%',
                       position: 'absolute',
-                      top: '1.5rem', right: '1.5rem' ,
+                      top: '3rem', right: '1.5rem' ,
+                      backgroundColor: recipe.isFavorite ? 'rgb(245, 173, 195)' : 'rgb(186, 184, 184)',
                       color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(105, 103, 104)',
                       '&:hover':{
                         color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
