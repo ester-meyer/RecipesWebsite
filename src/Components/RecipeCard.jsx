@@ -10,11 +10,18 @@ import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
 import TimeIcon from './RecipePage/TimeIcon'
 import Body from './RecipePage/Body';
+import { useEffect } from 'react';
 
 export default function RecipeCard() {
 
     const id = useParams().id;
     const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
+
+
+useEffect(() => {
+  window.scrollTo(0, 0); // גלול לעילית הדף
+}, []);
+
 
   return (
     <CssVarsProvider >
@@ -72,11 +79,11 @@ export default function RecipeCard() {
               },
             }}
           >
-            <TimeIcon recipr={recipe}/>      
+            <TimeIcon/>      
             <Divider >
               {recipe.category}
             </Divider>
-            <Body recipe={recipe}/>
+            <Body/>
           </Box>
           <Box component="footer" sx={{ py: 3 }}>
             <Typography level="body-xs" sx={{ textAlign: 'center' }}>

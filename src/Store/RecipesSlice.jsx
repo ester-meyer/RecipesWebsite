@@ -4,7 +4,7 @@ const categoryEnum = {
     FLESHI: 'Fleshi',
     VEGAN: 'Vegan',
 };
-
+var id=200
 const initialValue = {
     recipes: [
         {
@@ -99,7 +99,7 @@ const initialValue = {
                 "1 tablespoon lemon juice",
                 "1 tablespoon cornstarch (optional, for thicker sauce)"
             ],
-            Instructions: "Make the crust: Combine graham cracker crumbs, sugar, and melted butter in a bowl. Press firmly into the bottom of a 9-inch springform pan. Bake at 350°F (175°C) for 8-10 minutes if desired (for a crispier crust). Let cool. Make the filling: In a large bowl, beat softened cream cheese until smooth. Gradually add sugar and flour, beating until combined. Mix in vanilla extract. Add eggs one at a time, mixing on low speed until just combined. Stir in sour cream or heavy cream. Pour filling over the crust. Bake at 325°F (160°C) for 55-70 minutes, or until the edges are set and the center is slightly jiggly. Let cool completely in the oven with the door ajar for 1 hour, then chill in the refrigerator for at least 4 hours, preferably overnight. Make the blueberry topping: In a saucepan, combine blueberries, sugar, and lemon juice. If desired, whisk cornstarch with 1 tablespoon of water and add to the saucepan for a thicker sauce. Cook over medium heat, stirring constantly, until the blueberries have released their juices and the sauce has thickened slightly (about 5-7 minutes). Let the blueberry topping cool completely. Once the cheesecake is chilled, spread the blueberry topping evenly over the top. Serve chilled.",
+            instructions: "Make the crust: Combine graham cracker crumbs, sugar, and melted butter in a bowl. Press firmly into the bottom of a 9-inch springform pan. Bake at 350°F (175°C) for 8-10 minutes if desired (for a crispier crust). Let cool. Make the filling: In a large bowl, beat softened cream cheese until smooth. Gradually add sugar and flour, beating until combined. Mix in vanilla extract. Add eggs one at a time, mixing on low speed until just combined. Stir in sour cream or heavy cream. Pour filling over the crust. Bake at 325°F (160°C) for 55-70 minutes, or until the edges are set and the center is slightly jiggly. Let cool completely in the oven with the door ajar for 1 hour, then chill in the refrigerator for at least 4 hours, preferably overnight. Make the blueberry topping: In a saucepan, combine blueberries, sugar, and lemon juice. If desired, whisk cornstarch with 1 tablespoon of water and add to the saucepan for a thicker sauce. Cook over medium heat, stirring constantly, until the blueberries have released their juices and the sauce has thickened slightly (about 5-7 minutes). Let the blueberry topping cool completely. Once the cheesecake is chilled, spread the blueberry topping evenly over the top. Serve chilled.",
             category: categoryEnum.DAIRY,
             image: '/cakes/delicous.jpg',
             isFavorite: false
@@ -251,10 +251,10 @@ const initialValue = {
             "isFavorite": false
         },
         {
-            id: 111,
-            name: "Oreo Ice Cream",
-            preparationTime: 20,
-            ingredients: [
+            "id": 111,
+            "name": "Oreo Ice Cream",
+            "preparationTime": 20,
+            "ingredients": [
                 "1 1/2 cups heavy cream",
                 "1/2 cup whole milk",
                 "3/4 cup granulated sugar",
@@ -262,10 +262,10 @@ const initialValue = {
                 "1 teaspoon vanilla extract",
                 "1 cup coarsely crushed Oreo cookies (about 15-20 cookies)"
             ],
-            Instructions: "In a medium saucepan, combine the heavy cream, milk, sugar, and salt. Cook over medium heat, stirring constantly, until the sugar is dissolved and the mixture is warm (do not boil). Remove from heat and stir in the vanilla extract. Cover and chill the mixture in the refrigerator for at least 4 hours, or preferably overnight. Once chilled, pour the mixture into an ice cream maker and churn according to the manufacturer's instructions. During the last few minutes of churning, add the crushed Oreo cookies. Once churned, transfer the ice cream to an airtight container and freeze for at least 2 hours, or until firm. Enjoy!",
-            category: "DAIRY",
-            image: '/cakes/oreo.jpg',
-            isFavorite: false
+            "Instructions": "In a medium saucepan, combine the heavy cream, milk, sugar, and salt. Cook over medium heat, stirring constantly, until the sugar is dissolved and the mixture is warm (do not boil). Remove from heat and stir in the vanilla extract. Cover and chill the mixture in the refrigerator for at least 4 hours, or preferably overnight. Once chilled, pour the mixture into an ice cream maker and churn according to the manufacturer's instructions. During the last few minutes of churning, add the crushed Oreo cookies. Once churned, transfer the ice cream to an airtight container and freeze for at least 2 hours, or until firm. Enjoy!",
+            "category": "DAIRY",
+            "image": '/cakes/oreo.jpg',
+            "isFavorite": false
         }
         ,
         {
@@ -328,8 +328,6 @@ const initialValue = {
             "id": 115,
             "name": "Basic Croissant",
             "preparationTime": 60,
-            "restingTime": 180,
-            "bakingTime": 20,
             "ingredients": [
                 "500g strong white bread flour",
                 "10g dry yeast (or 25g fresh yeast)",
@@ -453,7 +451,7 @@ const recipesSlice=createSlice({
     initialState: initialValue,
     reducers:{
         addReciepe:(state, action)=>{
-            state.recipes.push(action.payload);
+            state.recipes.push({id: id++, ...action.payload, category: categoryEnum[action.payload.category]}            );
         },
         ToggleFavorite:(state, action)=>{
             const recipe=state.recipes.find((recipe)=>recipe.id === action.payload.id)

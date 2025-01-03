@@ -11,7 +11,25 @@ import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import FlatwareIcon from '@mui/icons-material/Flatware';
 import { ToggleFavorite } from '../Store/RecipesSlice'
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import CloseIcon from '@mui/icons-material/Close';
+import AddRecipe from './AddRecipe'
+import { styled } from '@mui/material/styles';
+
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
+
 export default function RecipesList() {
 
   const navigate = useNavigate()
@@ -21,6 +39,16 @@ export default function RecipesList() {
   function handleToggleFavorite(id) {
     dispatch(ToggleFavorite({ id }))
   }
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box>
       <Box style={{
@@ -45,7 +73,7 @@ export default function RecipesList() {
           width: '30%',
           fontSize: '1em',
           textAlign: 'center',
-          margin: '5px 0 0 0', 
+          margin: '5px 0 0 0',
         }}>
           Discover rich cakes and creamy milkshakes. Simple steps, delicious results—make every moment a sweet celebration!
         </p>
@@ -53,7 +81,7 @@ export default function RecipesList() {
           variant="solid"
           size="lg"
           aria-label="Explore"
-          onClick={() =>{nevigate('/AddRecipe')}}
+          onClick={()=>{handleClickOpen()} }
           sx={{
             position: 'absolute',
             bottom: '10px',
@@ -69,6 +97,36 @@ export default function RecipesList() {
           Add new recipe
         </Button>
       </Box>
+
+      <BootstrapDialog
+        onClose={handleClose}
+        aria-labelledby="customized-dialog-title"
+        open={open}
+        sx={{padding: '100px'}}
+      >
+        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+          Add New Recipe
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={(theme) => ({
+            position: 'absolute',
+            right: 8,
+            top: 8,
+          })}
+        >
+          <CloseIcon />
+        </IconButton>
+        <DialogContent dividers>
+          <AddRecipe />
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            Save changes
+          </Button>
+        </DialogActions>
+      </BootstrapDialog>
 
       <Box style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', rowGap: '20px' }}>
         {reciepes.map((recipe, index) => {
@@ -112,8 +170,7 @@ export default function RecipesList() {
                   </Typography>
                 </div>
                 <Button
-                onClick={()=>{recipe =reciepes.find(recipe=>recipe.id == recipe.id); alert(JSON.stringify(recipe))
-                 navigate(`/RecipeList/${recipe.id}`)}}
+                  onClick={() => { navigate(`/RecipeList/${recipe.id}`) }}
                   variant="solid"
                   size="md"
                   aria-label="Explore"
