@@ -12,6 +12,15 @@ import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import { useDispatch } from 'react-redux';
 import { addReciepe } from '../Store/RecipesSlice';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+export default function VerticalLinearStepper() {
+
+const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
 const steps = [
   {
@@ -23,7 +32,7 @@ const steps = [
         },
         {
             instraction: 'Upload image',
-            input: <Input type='file' accept='image/*' name='name' sx={{marginBottom: '20px'}} />,
+            input: <Input type='file' accept='image/*' name='image' sx={{marginBottom: '20px'}} />,
         },
       ],
   },
@@ -44,33 +53,31 @@ const steps = [
     label: 'More details',
     inputes: [
         {
-            name: 'preparationTime',
             instraction: 'Enter preparation time',
             input: <Input type='number' name='preparationTime' sx={{marginBottom: '20px'}} />,
         },
         {
-            name: 'category',
-            instraction: 'Upload image',
-            type: 'text',
-            // input: (<Select
-            //   value={age}
-            //   onChange={handleChange}
-            //   displayEmpty
-            //   inputProps={{ 'aria-label': 'Without label' }}
-            // >
-            //   <MenuItem value="">
-            //     <em>None</em>
-            //   </MenuItem>
-            //   <MenuItem value={10}>Ten</MenuItem>
-            //   <MenuItem value={20}>Twenty</MenuItem>
-            //   <MenuItem value={30}>Thirty</MenuItem>
-            // </Select>)
-          },
+            instraction: 'choose category',
+            input: <Select
+            value={age}
+            onChange={handleChange}
+            displayEmpty
+            name='category'
+            inputProps={{ 'aria-label': 'Without label' }}
+
+            >
+              <MenuItem value="Vegan">
+                {/* <em>None</em> */}
+              </MenuItem>
+              <MenuItem value={'Dairy'}>Dairy</MenuItem>
+              <MenuItem value={'Fleshi'}>Fleshi</MenuItem>
+              <MenuItem value={'Vegan'}>Vegan</MenuItem>
+            </Select>
+          }
       ],
   }
 ];
 
-export default function VerticalLinearStepper() {
   const dispatch = useDispatch()
   const [activeStep, setActiveStep] = React.useState(0);
   const data = React.useRef({});
@@ -95,8 +102,10 @@ export default function VerticalLinearStepper() {
       formValues[key] = value instanceof File ? URL.createObjectURL(value) : value;
     });
     data.current.value={...formValues,  ...data.current.value}
-    if(activeStep === steps.length-1)
-      alert(JSON.stringify(data.current.value, null, 2));
+    if(activeStep === steps.length-1){
+      data.current.value.ingredients=data.current.value.ingredients.split(',')
+      dispatch(addReciepe(data.current.value));
+    }
     handleNext()
 
   }
@@ -110,9 +119,7 @@ export default function VerticalLinearStepper() {
             alignItems: 'center',
         }}
         >
-        <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Add a recipe
-        </Typography>
+        
         <Stepper activeStep={activeStep} orientation="vertical" sx={{ width: '100%' }}>
             {steps.map((step, index) => (
                 <Step key={step.label}>

@@ -7,10 +7,12 @@ import {useDispatch, useSelector} from 'react-redux'
 import Typography from '@mui/joy/Typography';
 import IngredientList from './IngredientList';
 import { ToggleFavorite } from '../../Store/RecipesSlice';
+import { useParams } from 'react-router-dom';
 
+export default function Body(){
 
-export default function Body({recipe}){
-
+  const id = useParams().id;
+  const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
 
   const dispatch = useDispatch()
 

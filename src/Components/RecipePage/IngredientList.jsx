@@ -4,13 +4,15 @@ import ListItem from '@mui/joy/ListItem';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import RiceBowlIcon from '@mui/icons-material/RiceBowl';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 
-export default function IngredientList({recipe}) {
+export default function IngredientList() {
 
     //jast for now
-    recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==102)
-    
+      const id = useParams().id;
+      const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>id==recipe.id)
+      
   return (<>
     <Typography component="h1" level="h3" sx={{color:'rgb(208, 0, 64)'}} >
       Ingredients
