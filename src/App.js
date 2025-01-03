@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      {/* <AddRecipe/> */}
+      <AddRecipe/>
       <Navbar sx={{ zIndex: 5 }}/>
       <Routes>
         <Route path='/' element={<Home/>} />

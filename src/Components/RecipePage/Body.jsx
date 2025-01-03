@@ -26,7 +26,7 @@ export default function Body({recipe}){
                     aria-label="FavoriteBorder"
                     variant="plain"
                     // color="neutral"
-                    hight='3em'
+                    size='lg'
                     sx={{ 
                       position: 'absolute',
                       top: '1.5rem', right: '1.5rem' ,
