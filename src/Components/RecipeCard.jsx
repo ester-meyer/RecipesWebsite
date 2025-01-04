@@ -22,6 +22,8 @@ export default function RecipeCard() {
       window.scrollTo(0, 0);
     }, []);
     
+    
+
   return (
     <CssVarsProvider >
       <CssBaseline />
