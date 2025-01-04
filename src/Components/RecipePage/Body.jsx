@@ -28,21 +28,19 @@ export default function Body(){
               <IconButton
                     aria-label="FavoriteBorder"
                     variant="plain"
-                    color="neutral"
                     size='lg'
                     sx={{
                       borderRadius:'50%',
                       position: 'absolute',
                       top: '3rem', right: '1.5rem' ,
-                      backgroundColor: recipe.isFavorite ? 'rgb(245, 173, 195)' : 'rgb(186, 184, 184)',
-                      color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(105, 103, 104)',
-                      '&:hover':{
-                        color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
-                      }
                   }}
                   onClick={()=>{handleToggleFavorite(recipe.id)}}
                 >
-                      <FavoriteOutlinedIcon sx={{ zIndex:200000}}/>
+                      <FavoriteOutlinedIcon sx={{ 
+                        color: recipe.isFavorite ? 'rgb(208, 0, 64) !important' : 'rgb(105, 103, 104)',
+                        '&:hover':{
+                        color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
+                      }}}/>
                 </IconButton>
                 <Typography component="h1" level="h3" sx={{color:'rgb(208, 0, 64)'}} >
                   Instructions
