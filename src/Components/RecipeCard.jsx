@@ -5,7 +5,7 @@ import GlobalStyles from '@mui/joy/GlobalStyles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
 import {useSelector} from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
 import TimeIcon from './RecipePage/TimeIcon'
@@ -15,14 +15,19 @@ import { useEffect } from 'react';
 
 export default function RecipeCard() {
 
+  const navigate = useNavigate()
     const id = useParams().id;
     const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
 
-    React.useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-    
-    
+
+    useEffect(() => {
+      if (recipe == undefined) {
+        navigate('/*'); // מעביר לעמוד 404 אם המתכון לא נמצא
+      } else {
+        window.scrollTo(0, 0); // גולל למעלה אם המתכון נמצא
+      }
+    }, [recipe, navigate]);
+
 
   return (
     <CssVarsProvider >
