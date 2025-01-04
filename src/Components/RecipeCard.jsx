@@ -10,12 +10,15 @@ import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
 import TimeIcon from './RecipePage/TimeIcon'
 import Body from './RecipePage/Body';
-
 export default function RecipeCard() {
 
     const id = useParams().id;
     const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
 
+    React.useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
   return (
     <CssVarsProvider >
       <CssBaseline />

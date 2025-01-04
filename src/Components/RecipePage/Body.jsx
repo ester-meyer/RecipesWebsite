@@ -8,6 +8,7 @@ import Typography from '@mui/joy/Typography';
 import IngredientList from './IngredientList';
 import { ToggleFavorite } from '../../Store/RecipesSlice';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 export default function Body(){
@@ -17,12 +18,16 @@ export default function Body(){
 
   const dispatch = useDispatch()
 
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   function handleToggleFavorite(id){
     dispatch(ToggleFavorite({id}))
   }
     return(
       <>
-        <Stack sx={{ gap: 4, mt: 2 }}>    
+        <Stack sx={{ gap: 4, mt: 2}}>    
           <IngredientList/>
               
               <IconButton
@@ -30,7 +35,6 @@ export default function Body(){
                     variant="plain"
                     size='lg'
                     sx={{
-                      borderRadius:'50%',
                       position: 'absolute',
                       top: '3rem', right: '1.5rem' ,
                   }}
