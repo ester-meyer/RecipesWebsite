@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import Navbar from './Components/NavBar'
 import Home from './Components/home'
-import LogIn from './Components/LogIn'
 import SignUp from './Components/SignUp'
 import RecipeCard from './Components/RecipeCard'
 import RecipeList from './Components/RecipesList'
