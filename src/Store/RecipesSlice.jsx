@@ -121,7 +121,7 @@ const initialValue = {
                 "2 cups semisweet chocolate chunks",
                 "18-24 milk chocolate squares (e.g., Ghirardelli, Hershey's), depending on cookie size" // For the toppers
             ],
-            Instructions: "In a small bowl, whisk together the flour, baking soda, and salt. In a large bowl, cream together the softened butter, granulated sugar, and brown sugar until light and fluffy. Beat in the vanilla extract and then the eggs, one at a time. Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Stir in the chocolate chunks. Cover the dough and chill in the refrigerator for at least 30 minutes. Preheat oven to 375°F (190°C). Line baking sheets with parchment paper. Drop rounded tablespoons of dough onto the prepared baking sheets, leaving some space between each cookie. Bake for 9-11 minutes, or until the edges are golden brown and the centers are still slightly soft. Remove from the oven and immediately press a chocolate square onto the center of each cookie while they are still warm. Let the cookies cool completely on the baking sheets before serving or storing.",
+            instructions: "In a small bowl, whisk together the flour, baking soda, and salt. In a large bowl, cream together the softened butter, granulated sugar, and brown sugar until light and fluffy. Beat in the vanilla extract and then the eggs, one at a time. Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Stir in the chocolate chunks. Cover the dough and chill in the refrigerator for at least 30 minutes. Preheat oven to 375°F (190°C). Line baking sheets with parchment paper. Drop rounded tablespoons of dough onto the prepared baking sheets, leaving some space between each cookie. Bake for 9-11 minutes, or until the edges are golden brown and the centers are still slightly soft. Remove from the oven and immediately press a chocolate square onto the center of each cookie while they are still warm. Let the cookies cool completely on the baking sheets before serving or storing.",
             category: categoryEnum.VEGAN,
             image: '/cakes/manychocolate.jpg',
             isFavorite: false
@@ -262,7 +262,7 @@ const initialValue = {
                 "1 teaspoon vanilla extract",
                 "1 cup coarsely crushed Oreo cookies (about 15-20 cookies)"
             ],
-            "Instructions": "In a medium saucepan, combine the heavy cream, milk, sugar, and salt. Cook over medium heat, stirring constantly, until the sugar is dissolved and the mixture is warm (do not boil). Remove from heat and stir in the vanilla extract. Cover and chill the mixture in the refrigerator for at least 4 hours, or preferably overnight. Once chilled, pour the mixture into an ice cream maker and churn according to the manufacturer's instructions. During the last few minutes of churning, add the crushed Oreo cookies. Once churned, transfer the ice cream to an airtight container and freeze for at least 2 hours, or until firm. Enjoy!",
+            "instructions": "In a medium saucepan, combine the heavy cream, milk, sugar, and salt. Cook over medium heat, stirring constantly, until the sugar is dissolved and the mixture is warm (do not boil). Remove from heat and stir in the vanilla extract. Cover and chill the mixture in the refrigerator for at least 4 hours, or preferably overnight. Once chilled, pour the mixture into an ice cream maker and churn according to the manufacturer's instructions. During the last few minutes of churning, add the crushed Oreo cookies. Once churned, transfer the ice cream to an airtight container and freeze for at least 2 hours, or until firm. Enjoy!",
             "category": "DAIRY",
             "image": '/cakes/oreo.jpg',
             "isFavorite": false
@@ -345,29 +345,21 @@ const initialValue = {
         },
         {
             "id": 116,
-            "name": "Tall Round Chocolate Cake with Strawberry Cream",
-            "preparationTime": 30,
-            "bakingTime": 35,
+            "name": "Chocolate Center Cookies",
+            "preparationTime": 60,
             "ingredients": [
-                "2 cups (250g) all-purpose flour",
-                "¾ cup (75g) unsweetened cocoa powder",
-                "1 ½ teaspoons baking powder",
-                "1 ½ teaspoons baking soda",
-                "½ teaspoon salt",
-                "2 cups (400g) granulated sugar",
-                "2 large eggs",
-                "1 cup (240ml) buttermilk",
-                "½ cup (120ml) vegetable oil",
-                "2 teaspoons vanilla extract",
-                "1 cup (240ml) boiling water",
-                "1 cup (240ml) heavy cream",
-                "½ cup (60g) powdered sugar",
+                "1 cup (125g) all-purpose flour",
+                "1/2 cup (115g) unsalted butter, softened",
+                "1/4 cup (50g) sugar",
+                "1 large egg yolk",
                 "1 teaspoon vanilla extract",
-                "1 cup (150g) fresh strawberries, hulled and sliced"
+                "1/4 teaspoon salt",
+                "1/4 cup (30g) cocoa powder",
+                "1/4 cup (60g) chocolate spread or melted chocolate"
             ],
-            "instructions": "Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.\nWhisk together flour, cocoa powder, baking powder, baking soda, and salt.\nIn a separate bowl, whisk together sugar, eggs, buttermilk, oil, and vanilla extract.\nAdd dry ingredients to wet ingredients, mixing until just combined.\nPour in boiling water and mix until smooth.\nDivide batter between cake pans.\nBake for 30-35 minutes.\nLet cakes cool completely.\nBeat heavy cream until soft peaks form.\nAdd powdered sugar and vanilla and beat until stiff peaks form.\nGently fold in sliced strawberries.\nAssemble the cake: Layer cake, cream, and then the top layer. Decorate with strawberries if desired.",
-            "category": categoryEnum.VEGAN,
-            "image": "/cakes/odiseo-castrejon-LTaNflncXV0-unsplash.jpg",
+            "instructions": "Prepare the cookie dough:\nIn a bowl, beat the butter and sugar until light and fluffy.\nAdd the egg yolk and vanilla extract, and mix well.\nSift together the flour, cocoa powder, and salt. Gradually add to the wet mixture and combine until a dough forms.\nDivide the dough into two portions.\nShape and bake:\nPreheat the oven to 350°F (175°C) and line a baking sheet with parchment paper.\nRoll out each portion of dough and use a round cookie cutter to cut shapes.\nFor half of the cookies, use a smaller cutter to create a ring shape.\nBake all cookies (rings and bases) for 8–10 minutes. Let them cool completely.\nAssemble the cookies:\nSpread a small amount of chocolate spread or melted chocolate on the flat side of each base cookie.\nTop with a ring-shaped cookie, pressing gently to create a sandwich effect.\nLet the chocolate set before serving.",
+            "category": "COOKIES",
+            "image": "/cakes/elena-leya-2mOHx9MIqb8-unsplash.jpg",
             "isFavorite": false
         },
         {

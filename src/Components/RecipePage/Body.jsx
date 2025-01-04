@@ -8,6 +8,7 @@ import Typography from '@mui/joy/Typography';
 import IngredientList from './IngredientList';
 import { ToggleFavorite } from '../../Store/RecipesSlice';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 export default function Body(){
@@ -17,32 +18,33 @@ export default function Body(){
 
   const dispatch = useDispatch()
 
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   function handleToggleFavorite(id){
     dispatch(ToggleFavorite({id}))
   }
     return(
       <>
-        <Stack sx={{ gap: 4, mt: 2 }}>    
+        <Stack sx={{ gap: 4, mt: 2}}>    
           <IngredientList/>
               
               <IconButton
                     aria-label="FavoriteBorder"
                     variant="plain"
-                    color="neutral"
                     size='lg'
                     sx={{
-                      borderRadius:'50%',
                       position: 'absolute',
                       top: '3rem', right: '1.5rem' ,
-                      backgroundColor: recipe.isFavorite ? 'rgb(245, 173, 195)' : 'rgb(186, 184, 184)',
-                      color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(105, 103, 104)',
-                      '&:hover':{
-                        color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
-                      }
                   }}
                   onClick={()=>{handleToggleFavorite(recipe.id)}}
                 >
-                      <FavoriteOutlinedIcon sx={{ zIndex:200000}}/>
+                      <FavoriteOutlinedIcon sx={{ 
+                        color: recipe.isFavorite ? 'rgb(208, 0, 64) !important' : 'rgb(105, 103, 104)',
+                        '&:hover':{
+                        color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
+                      }}}/>
                 </IconButton>
                 <Typography component="h1" level="h3" sx={{color:'rgb(208, 0, 64)'}} >
                   Instructions

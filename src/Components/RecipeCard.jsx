@@ -17,9 +17,11 @@ export default function RecipeCard() {
 
     const id = useParams().id;
     const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
-    useEffect(() => {
+
+    React.useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+    
   return (
     <CssVarsProvider >
       <CssBaseline />

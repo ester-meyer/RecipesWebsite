@@ -11,16 +11,12 @@ import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 import Stack from '@mui/joy/Stack';
 import GoogleIcon from './GoogleIcon';
-import {useDispatch} from "react-redux"
-import {createUser} from '../Store/UserSlice'
+import { createUser } from '../Store/UserSlice'
 import Snackbar from '@mui/joy/Snackbar';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import { useNavigate } from 'react-router-dom';
+import SignUpForm from './SignUpForm'
 export default function JoySignInSideTemplate() {
 
-const navigate = useNavigate()
-
-  const dispatch = useDispatch()
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -54,7 +50,7 @@ const navigate = useNavigate()
             sx={{ py: 3, display: 'flex', justifyContent: 'space-between' }}
           >
             <Box sx={{ gap: 2, display: 'flex', alignItems: 'center' }}>
- 
+
             </Box>
           </Box>
           <Box
@@ -81,7 +77,7 @@ const navigate = useNavigate()
             }}
           >
             <Stack sx={{ gap: 4, mb: 2 }}>
-              <Stack sx={{ gap: 1}}>
+              <Stack sx={{ gap: 1 }}>
                 <Typography component="h1" level="h3" >
                   Sign up
                 </Typography>
@@ -91,7 +87,7 @@ const navigate = useNavigate()
                 color="neutral"
                 fullWidth
                 startDecorator={<GoogleIcon />}
-                onClick={() => {setOpen(true); }}
+                onClick={() => { setOpen(true); }}
               >
                 Continue with Google
               </Button>
@@ -105,55 +101,7 @@ const navigate = useNavigate()
             >
               or
             </Divider>
-            <Stack sx={{ gap: 4, mt: 2 }}>
-              <form
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  const formElements = event.currentTarget.elements;
-                  const data = {
-                    name: formElements.userName.value,
-                    email: formElements.email.value,
-                    password: formElements.password.value,
-                    persistent: formElements.persistent.checked,
-                  };
-                  dispatch(createUser(data))
-                  navigate('/RecipeList')
-                }}
-              >
-                <FormControl required>
-                   <FormLabel>Name</FormLabel>
-                    <Input type="text" name="userName" />
-                  </FormControl>
-                <FormControl required>
-                  <FormLabel>Email</FormLabel>
-                  <Input type="email" name="email" />
-                </FormControl>
-                <FormControl required>
-                  <FormLabel>Password</FormLabel>
-                  <Input type="password" name="password" />
-                </FormControl>
-                <Stack sx={{ gap: 4, mt: 2 }}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Checkbox size="sm" label="Remember me" name="persistent" />
-                  </Box>
-                  <Button type="submit" fullWidth 
-                  sx={{backgroundColor: 'rgb(208, 0, 64)',
-                    '&:hover':{
-                    backgroundColor: 'rgb(251, 26, 93)'
-                    }
-                  }}>
-                    Sign up
-                  </Button>
-                </Stack>
-                
-              </form>
-            </Stack>
+            <SignUpForm />
           </Box>
           {/*our choice*/}
           <Box component="footer" sx={{ py: 3 }}>
@@ -178,7 +126,7 @@ const navigate = useNavigate()
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundImage: 
+          backgroundImage:
             `url('/cakes/for_login_page.png')`,
 
         })}
