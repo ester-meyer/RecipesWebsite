@@ -3,10 +3,9 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import Box from '@mui/joy/Box';
 import Container from '@mui/joy/Container';
 import { typographyClasses } from '@mui/joy/Typography';
-export default function TwoSidedLayout({
-  children,
-  reversed,
-}) {
+
+export default function TwoSidedLayout({ children, reversed, }) {
+
   return (
     <Container
       sx={[
@@ -67,8 +66,7 @@ export default function TwoSidedLayout({
           flexBasis: '50%',
         })}
       >
-        <img src='/cakes/for_home_page.jpg' alt="Cakes"/>
-        
+        <img src='/cakes/for_home_page.jpg' alt="Cakes" />
       </AspectRatio>
     </Container>
   );

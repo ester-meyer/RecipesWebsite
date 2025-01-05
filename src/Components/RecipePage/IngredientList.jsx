@@ -11,24 +11,20 @@ import { useEffect } from 'react';
 
 export default function IngredientList() {
 
-    //jast for now
-      const id = useParams().id;
-      const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>id==recipe.id)
+  const id = useParams().id;
+  const recipe = useSelector((state) => state.RecipesSlice.recipes).find(recipe => id == recipe.id)
 
-      useEffect(() => {
-            window.scrollTo(0, 0);
-          }, []);
-      
-  return (<>
-    <Typography component="h1" level="h3" sx={{color:'rgb(208, 0, 64)'}} >
-      Ingredients
-    </Typography>
-    <List aria-labelledby="decorated-list-demo" sx={{ columnGap: '20px', height: '300px', overflowY: 'auto' }}>
-      {recipe.ingredients.map((ingredient) => (
-        <ListItem>
-          <ListItemDecorator><img src='/logo.png' style={{height: '1.25em'}} /></ListItemDecorator>{ingredient}
-        </ListItem>
-      ))}
-    </List>
-  </>)
+  return (
+    <>
+      <Typography component="h1" level="h3" sx={{ color: 'rgb(208, 0, 64)' }} >
+        Ingredients
+      </Typography>
+      <List aria-labelledby="decorated-list-demo" sx={{ columnGap: '20px', height: '300px', overflowY: 'auto' }}>
+        {recipe.ingredients.map((ingredient) => (
+          <ListItem>
+            <ListItemDecorator><img src='/logo.png' style={{ height: '1.25em' }} /></ListItemDecorator>{ingredient}
+          </ListItem>
+        ))}
+      </List>
+    </>)
 }

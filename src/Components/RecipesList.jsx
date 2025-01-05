@@ -1,21 +1,10 @@
 import * as React from 'react';
-import { useSelector } from 'react-redux';
-import { Typography, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import Button from '@mui/joy/Button';
-import Card from '@mui/joy/Card';
-import CardContent from '@mui/joy/CardContent';
 import IconButton from '@mui/joy/IconButton';
-import AspectRatio from '@mui/joy/AspectRatio';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
-import FlatwareIcon from '@mui/icons-material/Flatware';
-import { ToggleFavorite } from '../Store/RecipesSlice'
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import CloseIcon from '@mui/icons-material/Close';
 import AddRecipe from './AddRecipe'
 import { styled } from '@mui/material/styles';
@@ -73,7 +62,7 @@ export default function RecipesList() {
           variant="solid"
           size="lg"
           aria-label="Explore"
-          onClick={()=>{handleClickOpen()} }
+          onClick={() => { handleClickOpen() }}
           sx={{
             position: 'absolute',
             bottom: '10px',
@@ -89,7 +78,6 @@ export default function RecipesList() {
           Add new recipe
         </Button>
       </Box>
-
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -110,10 +98,10 @@ export default function RecipesList() {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <AddRecipe handleClose={handleClose}/>
+          <AddRecipe handleClose={handleClose} />
         </DialogContent>
       </BootstrapDialog>
-      <RecipesListCard/>
+      <RecipesListCard />
     </Box>
   );
 }

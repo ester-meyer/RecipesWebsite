@@ -38,35 +38,40 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Page404() {
     const navigate = useNavigate()
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh'
-      }}
-    >
-      <Container maxWidth="md">
-        <Grid container spacing={2}>
-          <Grid xs={6}>
-            <Typography variant="h1">
-              404
-            </Typography>
-            <Typography variant="h6">
-              The page you’re looking for doesn’t exist.
-            </Typography>
-            <Button variant="contained" sx={{backgroundColor:'rgb(251, 26, 93)'}} onClick={()=>{navigate(-1)}}>Back Home</Button>
-          </Grid>
-          <Grid xs={6}>
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/09/12/31/error-2129569__340.jpg"
-              alt=""
-              width={500} height={250}
-            />
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  );
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minHeight: '100vh'
+            }}
+        >
+            <Container maxWidth="md">
+                <Grid container spacing={2}>
+                    <Grid xs={6}>
+                        <Typography variant="h1">
+                            404F
+                        </Typography>
+                        <Typography
+                            variant="h4"
+                        >
+                            It looks like something went wrong.
+                        </Typography>
+                        <Typography>
+                            Don&apos;t worry, our team is already on it.
+                        </Typography>
+                        <Button variant="contained" sx={{ backgroundColor: 'rgb(251, 26, 93)' }} onClick={() => { navigate(-1) }}>Back Home</Button>
+                    </Grid>
+                    <Grid xs={6}>
+                        <img
+                            src="https://cdn.pixabay.com/photo/2017/03/09/12/31/error-2129569__340.jpg"
+                            alt=""
+                            width={500} height={250}
+                        />
+                    </Grid>
+                </Grid>
+            </Container>
+        </Box>
+    );
 }

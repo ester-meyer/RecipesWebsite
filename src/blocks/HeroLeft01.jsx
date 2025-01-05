@@ -3,13 +3,12 @@ import * as React from 'react';
 import Button from '@mui/joy/Button';
 import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
-import ArrowForward from '@mui/icons-material/ArrowForward';
 import TwoSidedLayout from '../Components/TwoSidedLayout';
 
 export default function HeroLeft01() {
   return (
     <TwoSidedLayout>
-      <Typography color="primary" sx={{ fontSize: 'lg', fontWeight: 'lg', color: 'rgb(208, 0, 64)'}}>
+      <Typography color="primary" sx={{ fontSize: 'lg', fontWeight: 'lg', color: 'rgb(208, 0, 64)' }}>
         The power to do more
       </Typography>
       <Typography
@@ -19,9 +18,9 @@ export default function HeroLeft01() {
           fontSize: 'clamp(1.875rem, 1.3636rem + 2.1818vw, 3rem)',
         }}
       >
-      JOIN US BEAKING-
-      <br/>
-      YAMMY.
+        JOIN US BEAKING-
+        <br />
+        YAMMY.
       </Typography>
       <Typography
         textColor="text.secondary"
@@ -30,17 +29,17 @@ export default function HeroLeft01() {
         A descriptive secondary text placeholder. Use it to explain your business
         offer better.
       </Typography>
-      <Button size="lg" sx={{ 
+      <Button size="lg" sx={{
         backgroundColor: 'rgb(208, 0, 64)',
-        '&:hover':{
+        '&:hover': {
           backgroundColor: 'rgb(251, 26, 93)'
 
         }
-        }}>
+      }}>
         Get Started
       </Button>
       <Typography>
-        Already a member? <Link  sx={{ fontWeight: 'lg', color: 'rgb(208, 0, 64) !important'}}>Sign in</Link>
+        Already a member? <Link sx={{ fontWeight: 'lg', color: 'rgb(208, 0, 64) !important' }}>Sign in</Link>
       </Typography>
       <Typography
         level="body-xs"

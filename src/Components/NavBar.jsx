@@ -20,21 +20,22 @@ export default function MenuAppBar() {
   };
 
   const navigate = useNavigate()
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }} >
         <Toolbar>
-        <Link 
-            to="/" 
+          <Link
+            to="/"
             style={{
               textDecoration: 'none',
               cursor: 'pointer',
             }}
           >
-            <img 
-              src={Logo} 
-              style={{ height: '3em', display: 'block' }} 
-              alt="Logo" 
+            <img
+              src={Logo}
+              style={{ height: '3em', display: 'block' }}
+              alt="Logo"
             />
           </Link>
           <Tooltip title={user.name} arrow>
@@ -44,14 +45,12 @@ export default function MenuAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleUser}
-              sx={{color:'rgb(45, 45, 45)', marginLeft:'2%'}}
-              
+              sx={{ color: 'rgb(45, 45, 45)', marginLeft: '2%' }}
+
             >
               <AccountCircle style={{ height: '1em' }} />
             </IconButton>
           </Tooltip>
-
-
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
+import { CssVarsProvider } from '@mui/joy/styles';
 import Box from '@mui/joy/Box';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Button from '@mui/joy/Button';
@@ -45,17 +45,17 @@ export default function Home() {
           >
             Here you gonna find a whole world of the easiest, tastiest and most successful recipes
           </Typography>
-            <Button
-              onClick={()=>{navigate('/RecipeList')}}
-              size="lg" sx={{
-                backgroundColor: 'rgb(208, 0, 64)',
-                '&:hover': {
-                  backgroundColor: 'rgb(251, 26, 93)'
+          <Button
+            onClick={() => { navigate('/RecipeList') }}
+            size="lg" sx={{
+              backgroundColor: 'rgb(208, 0, 64)',
+              '&:hover': {
+                backgroundColor: 'rgb(251, 26, 93)'
 
-                }
-              }}>
-              Get Started
-            </Button>
+              }
+            }}>
+            Get Started
+          </Button>
           <Typography>
             New user? <Link
               component={RouterLink}

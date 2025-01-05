@@ -1,6 +1,4 @@
 import Stack from '@mui/joy/Stack';
-// import Like from './Like'
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import IconButton from '@mui/joy/IconButton';
 import {useDispatch, useSelector} from 'react-redux'
@@ -8,7 +6,6 @@ import Typography from '@mui/joy/Typography';
 import IngredientList from './IngredientList';
 import { ToggleFavorite } from '../../Store/RecipesSlice';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 
 
 export default function Body(){
@@ -18,10 +15,6 @@ export default function Body(){
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-
   function handleToggleFavorite(id){
     dispatch(ToggleFavorite({id}))
   }
@@ -29,7 +22,6 @@ export default function Body(){
       <>
         <Stack sx={{ gap: 4, mt: 2}}>    
           <IngredientList/>
-              
               <IconButton
                     aria-label="FavoriteBorder"
                     variant="plain"

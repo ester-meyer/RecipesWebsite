@@ -1,20 +1,16 @@
 import * as React from 'react';
-import { CssVarsProvider, extendTheme, useColorScheme } from '@mui/joy/styles';
+import { CssVarsProvider } from '@mui/joy/styles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
-import FormControl from '@mui/joy/FormControl';
-import FormLabel from '@mui/joy/FormLabel';
-import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 import Stack from '@mui/joy/Stack';
 import GoogleIcon from './GoogleIcon';
-import { createUser } from '../Store/UserSlice'
 import Snackbar from '@mui/joy/Snackbar';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import SignUpForm from './SignUpForm'
+
 export default function JoySignInSideTemplate() {
 
   const [open, setOpen] = React.useState(false);
@@ -46,19 +42,12 @@ export default function JoySignInSideTemplate() {
           }}
         >
           <Box
-            component="header"
-            sx={{ py: 3, display: 'flex', justifyContent: 'space-between' }}
-          >
-            <Box sx={{ gap: 2, display: 'flex', alignItems: 'center' }}>
-
-            </Box>
-          </Box>
-          <Box
             component="main"
             sx={{
               my: 'auto',
               py: 2,
               pb: 5,
+              pt: 10,
               display: 'flex',
               flexDirection: 'column',
               gap: 2,
@@ -92,18 +81,11 @@ export default function JoySignInSideTemplate() {
                 Continue with Google
               </Button>
             </Stack>
-            <Divider
-              sx={(theme) => ({
-                [theme.getColorSchemeSelector('light')]: {
-                  color: { xs: '#FFF', md: 'text.tertiary' },
-                },
-              })}
-            >
+            <Divider>
               or
             </Divider>
             <SignUpForm />
           </Box>
-          {/*our choice*/}
           <Box component="footer" sx={{ py: 3 }}>
             <Typography level="body-xs" sx={{ textAlign: 'center' }}>
               © YummY {new Date().getFullYear()}
@@ -112,7 +94,7 @@ export default function JoySignInSideTemplate() {
         </Box>
       </Box>
       <Box
-        sx={(theme) => ({
+        sx={() => ({
           height: '100%',
           position: 'fixed',
           right: 0,
