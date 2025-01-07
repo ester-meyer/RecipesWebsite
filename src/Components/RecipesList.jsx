@@ -9,6 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddRecipe from './AddRecipe'
 import { styled } from '@mui/material/styles';
 import RecipesListCard from './RecipesListCards';
+import { useLocation } from 'react-router-dom';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -29,6 +30,8 @@ export default function RecipesList() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const {FevoriteMode} = useLocation().state || false
 
   return (
     <Box>
@@ -101,7 +104,7 @@ export default function RecipesList() {
           <AddRecipe handleClose={handleClose} />
         </DialogContent>
       </BootstrapDialog>
-      <RecipesListCard />
+      <RecipesListCard FevoriteMode={FevoriteMode}/>
     </Box>
   );
 }

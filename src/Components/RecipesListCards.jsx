@@ -13,11 +13,12 @@ import { ToggleFavorite } from '../Store/RecipesSlice'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-export default function RecipesListCard() {
+export default function RecipesListCard({ FevoriteMode }) {
 
   const navigate = useNavigate()
   const dispatch = useDispatch();
-  const reciepes = useSelector(slices => slices.RecipesSlice).recipes;
+  const reciepes = useSelector(slices => slices.RecipesSlice).recipes; 
+
   function handleToggleFavorite(id) {
     dispatch(ToggleFavorite({ id }))
   }
@@ -25,63 +26,64 @@ export default function RecipesListCard() {
   return (
     <Box style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', rowGap: '20px' }}>
       {reciepes.map((recipe, index) => {
-        return (
-          <Card key={index} sx={{ width: 320 }}>
-            <div>
-              <Typography level="title-lg"><b>{recipe.name}</b></Typography>
-              <IconButton
-                aria-label="FavoriteBorder"
-                variant="plain"
-                size="sm"
-                sx={{
-                  position: 'absolute',
-                  top: '0.875rem', right: '0.5rem',
-                  color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(105, 103, 104)',
-                  '&:hover': {
-                    color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
-                  }
-                }}
-                onClick={() => handleToggleFavorite(recipe.id)}
-              >
-                <FavoriteOutlinedIcon />
-              </IconButton>
-            </div>
-            <AspectRatio minHeight="120px" maxHeight="200px">
-              <img alt="" src={recipe.image}/>
-            </AspectRatio>
-            <CardContent orientation="horizontal">
+        if(!FevoriteMode || recipe.isFavorite)
+          return (
+            <Card key={index} sx={{ width: 320 }}>
               <div>
-                <Typography level="body-xs" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <QueryBuilderIcon />
-                  {recipe.preparationTime}
-                  <label>minutes</label>
-                </Typography>
-                <Typography level="body-xs" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <FlatwareIcon />
-                  {recipe.category}
-                </Typography>
+                <Typography level="title-lg"><b>{recipe.name}</b></Typography>
+                <IconButton
+                  aria-label="FavoriteBorder"
+                  variant="plain"
+                  size="sm"
+                  sx={{
+                    position: 'absolute',
+                    top: '0.875rem', right: '0.5rem',
+                    color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(105, 103, 104)',
+                    '&:hover': {
+                      color: recipe.isFavorite ? 'rgb(208, 0, 64)' : 'rgb(90, 89, 90)',
+                    }
+                  }}
+                  onClick={() => handleToggleFavorite(recipe.id)}
+                >
+                  <FavoriteOutlinedIcon />
+                </IconButton>
               </div>
-              <Button
-                onClick={() => { navigate(`/RecipeList/${recipe.id}`) }}
-                variant="solid"
-                size="md"
-                aria-label="Explore"
-                sx={{
-                  ml: 'auto',
-                  alignSelf: 'center',
-                  fontWeight: 600,
-                  backgroundColor: 'rgb(208, 0, 64)',
-                  '&:hover': {
-                    backgroundColor: 'rgb(251, 26, 93)',
-                  },
-                }}
-              >
-                Explore
-              </Button>
-            </CardContent>
-          </Card>
-        )
-      })}
-    </Box>
-  )
+              <AspectRatio minHeight="120px" maxHeight="200px">
+                <img alt="" src={recipe.image}/>
+              </AspectRatio>
+              <CardContent orientation="horizontal">
+                <div>
+                  <Typography level="body-xs" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <QueryBuilderIcon />
+                    {recipe.preparationTime}
+                    <label>minutes</label>
+                  </Typography>
+                  <Typography level="body-xs" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <FlatwareIcon />
+                    {recipe.category}
+                  </Typography>
+                </div>
+                <Button
+                  onClick={() => { navigate(`/RecipeList/${recipe.id}`) }}
+                  variant="solid"
+                  size="md"
+                  aria-label="Explore"
+                  sx={{
+                    ml: 'auto',
+                    alignSelf: 'center',
+                    fontWeight: 600,
+                    backgroundColor: 'rgb(208, 0, 64)',
+                    '&:hover': {
+                      backgroundColor: 'rgb(251, 26, 93)',
+                    },
+                  }}
+                >
+                  Explore
+                </Button>
+              </CardContent>
+            </Card>
+          )
+        })}
+      </Box>
+    )
 }

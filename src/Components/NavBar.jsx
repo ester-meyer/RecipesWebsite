@@ -9,6 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Logo from '../Images/logo.png'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 export default function MenuAppBar() {
 
@@ -51,8 +52,26 @@ export default function MenuAppBar() {
               <AccountCircle style={{ height: '1em' }} />
             </IconButton>
           </Tooltip>
-        </Toolbar>
-      </AppBar>
-    </Box>
+          <IconButton
+            aria-label="FavoriteBorder"
+            variant="plain"
+            size="sm"
+            sx={{
+              color: 'rgb(208, 0, 64)',
+              '&:hover': {
+                color: 'rgb(208, 0, 64)',
+              }
+            }}
+            onClick={() => { if (user.name == "not-connected")  alert("not-connected");
+                            else{
+                              navigate('/RecipeList', { state: { FevoriteMode: true } })}
+                           }
+                      }
+          >
+          <FavoriteOutlinedIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+    </Box >
   );
 }
