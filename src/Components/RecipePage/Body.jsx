@@ -12,6 +12,8 @@ export default function Body(){
 
     const id = useParams().id;
     const recipe = useSelector((state)=>state.RecipesSlice.recipes).find(recipe=>recipe.id==id)
+      const user = useSelector((state) => state.userSlice)
+    
 
   const dispatch = useDispatch()
 
@@ -26,6 +28,7 @@ export default function Body(){
                     aria-label="FavoriteBorder"
                     variant="plain"
                     size='lg'
+                    disabled={user.name=="not-connected"}
                     sx={{
                       position: 'absolute',
                       top: '3rem', right: '1.5rem' ,

@@ -40,6 +40,10 @@ export default extendTheme({
           solidHoverBg: 'var(--joy-palette-primary-600)',
           solidActiveBg: 'var(--joy-palette-primary-400)',
         },
+        custom: {
+          main: 'rgb(251, 26, 93)',
+          contrastText: '#fff',
+        },
         background: {
           body: 'var(--joy-palette-common-black)',
           surface: 'var(--joy-palette-neutral-900)',
@@ -52,6 +56,16 @@ export default extendTheme({
     body: "'Inter', var(--joy-fontFamily-fallback)",
   },
   components: {
+    JoyBadge: {
+      styleOverrides: {
+        badge: ({ theme }) => ({
+          ...(theme.vars.palette.custom && {
+            backgroundColor: theme.vars.palette.custom.main,
+            color: theme.vars.palette.custom.contrastText,
+          }),
+        }),
+      },},
+     
     JoyInput: {
       styleOverrides: {
         root: ({ ownerState, theme }) => ({

@@ -18,6 +18,8 @@ export default function RecipesListCard() {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const reciepes = useSelector(slices => slices.RecipesSlice).recipes;
+  const user = useSelector((state) => state.userSlice)
+  
   function handleToggleFavorite(id) {
     dispatch(ToggleFavorite({ id }))
   }
@@ -33,6 +35,7 @@ export default function RecipesListCard() {
                 aria-label="FavoriteBorder"
                 variant="plain"
                 size="sm"
+                disabled={user.name=="not-connected"}
                 sx={{
                   position: 'absolute',
                   top: '0.875rem', right: '0.5rem',

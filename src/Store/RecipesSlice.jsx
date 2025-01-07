@@ -6,6 +6,7 @@ const categoryEnum = {
 };
 var id=200
 const initialValue = {
+    favoriteCount: 0,
     recipes: [
         {
             "id": 100,
@@ -448,6 +449,10 @@ const recipesSlice=createSlice({
         ToggleFavorite:(state, action)=>{
             const recipe=state.recipes.find((recipe)=>recipe.id === action.payload.id)
             recipe.isFavorite=!recipe.isFavorite
+            if(recipe.isFavorite)
+                state.favoriteCount++
+            else
+            state.favoriteCount--
         }
     }
 })
