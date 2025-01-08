@@ -57,7 +57,10 @@ export default function MenuAppBar() {
             </IconButton>
           </Tooltip>
           {user.name != "not-connected" &&
-          <Link to='/RecipeList'>
+          <Link 
+          to='/RecipeList'
+          state={{ FevoriteMode: true }}
+          >
           <Badge badgeContent={recipesSlice.favoriteCount}  sx={{
             '& .MuiBadge-badge': {
               backgroundColor: 'rgb(251, 26, 93)',
