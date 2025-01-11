@@ -7,9 +7,11 @@ import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import TwoSidedLayout from '../Components/TwoSidedLayout';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function Home() {
 
+  const user = useSelector((state) => state.userSlice)
   const navigate = useNavigate()
   return (
     <CssVarsProvider disableTransitionOnChang>
@@ -56,6 +58,7 @@ export default function Home() {
             }}>
             Get Started
           </Button>
+          {user.name == "not-connected" &&
           <Typography>
             New user? <Link
               component={RouterLink}
@@ -66,7 +69,7 @@ export default function Home() {
 
                 }
               }}>Sign up!</Link>
-          </Typography>
+          </Typography>}
           <Typography
             level="body-xs"
             sx={{

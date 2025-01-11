@@ -7,6 +7,8 @@ import RecipeCard from './Components/RecipeCard'
 import RecipeList from './Components/RecipesList'
 import AddRecipe from './Components/AddRecipe'
 import Page404 from './Components/Page404';
+import Favorites from './Components/Favorites'
+
 function App() {
 
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path='/RecipeList' element={<RecipeList />} />
         <Route path='/RecipeList/:id' element={<RecipeCard />} />
         <Route path='/AddRecipe' element={<AddRecipe />} />
+        <Route path='/Favorites' element={<Favorites />} />
         <Route path='/*' element={<Page404 />} />
       </Routes>
     </>
