@@ -29,7 +29,7 @@ export default function SignUpForm() {
 
         <Stack sx={{ gap: 4, mt: 2 }}>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <FormControl required>
+                <FormControl>
                     <FormLabel>Name</FormLabel>
                     <Input type="text" {...register("name", { required: "name is requured" })} />
                     {errors.name && <span>{errors.name.message}</span>}
@@ -38,10 +38,9 @@ export default function SignUpForm() {
                     <FormLabel>Email</FormLabel>
                     <Input type="email" {...register("email")} />
                 </FormControl> */}
-                <FormControl required error={!!errors.email}>
+                <FormControl error={!!errors.email}>
                     <FormLabel>Email</FormLabel>
                     <Input
-                        type="email"
                         {...register("email", {
                             required: "Email is required",
                             pattern: {
@@ -56,10 +55,9 @@ export default function SignUpForm() {
                      <FormLabel>Password</FormLabel>
                     <Input type="password" name="password" />
                 </FormControl> */}
-                <FormControl required error={!!errors.password}>
+                <FormControl error={!!errors.password}>
                     <FormLabel>Password</FormLabel>
                     <Input
-                        type="password"
                         {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be at least 6 characters" } })}
                     />
                     {errors.password && <span>{errors.password.message}</span>}
