@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
 import Checkbox from '@mui/joy/Checkbox';
@@ -12,37 +13,43 @@ import { useDispatch } from "react-redux"
 
 export default function SignUpForm() {
 
+    const { register, handleSubmit , formState: { errors }} = useForm()
     const navigate = useNavigate()
 
     const dispatch = useDispatch()
+
+    const onSubmit = (data) => {
+        dispatch(createUser(data));
+        navigate('/RecipeList');
+    };
     return (
 
         <Stack sx={{ gap: 4, mt: 2 }}>
-            <form
-                onSubmit={(event) => {
-                    event.preventDefault();
-                    const formElements = event.currentTarget.elements;
-                    const data = {
-                        name: formElements.userName.value,
-                        email: formElements.email.value,
-                        password: formElements.password.value,
-                        persistent: formElements.persistent.checked,
-                    };
-                    dispatch(createUser(data))
-                    navigate('/RecipeList')
-                }}
-            >
-                <FormControl required>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <FormControl>
                     <FormLabel>Name</FormLabel>
-                    <Input type="text" name="userName" />
+                    <Input type="text" {...register("name", { required: "name is requured" })} />
+                    {errors.name && <span>{errors.name.message}</span>}
                 </FormControl>
-                <FormControl required>
+                <FormControl error={!!errors.email}>
                     <FormLabel>Email</FormLabel>
-                    <Input type="email" name="email" />
+                    <Input
+                        {...register("email", {
+                            required: "Email is required",
+                            pattern: {
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                message: "Invalid email format"
+                            }
+                        })}
+                    />
+                    {errors.email && <span>{errors.email.message}</span>}
                 </FormControl>
-                <FormControl required>
+                <FormControl error={!!errors.password}>
                     <FormLabel>Password</FormLabel>
-                    <Input type="password" name="password" />
+                    <Input
+                        {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be at least 6 characters" } })}
+                    />
+                    {errors.password && <span>{errors.password.message}</span>}
                 </FormControl>
                 <Stack sx={{ gap: 4, mt: 2 }}>
                     <Box
