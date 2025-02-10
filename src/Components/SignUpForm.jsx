@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useForm, Controller } from 'react-hook-form';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
 import Checkbox from '@mui/joy/Checkbox';
@@ -7,30 +6,12 @@ import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import Stack from '@mui/joy/Stack';
-import { createUser } from '../Store/UserSlice'
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux"
+import useFormControler from '../Hooks/useFormControler'
 
 export default function SignUpForm() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        defaultValues: {
-            name: '', 
-            email: '', 
-            password : '',
-        },
-    })
-    const navigate = useNavigate()
-
-    const dispatch = useDispatch()
-
-    const onSubmit = (data) => {
-        dispatch(createUser(data));
-        navigate('/RecipeList');
-    };
-
+    const { register, handleSubmit, errors , onSubmit } = useFormControler()
     return (
-
         <Stack sx={{ gap: 4, mt: 2 }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormControl error={!!errors.name}>
