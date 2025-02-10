@@ -9,6 +9,7 @@ import AddRecipe from './Components/AddRecipe'
 import Page404 from './Components/Page404';
 import Favorites from './Components/Favorites'
 
+
 function App() {
 
   return (

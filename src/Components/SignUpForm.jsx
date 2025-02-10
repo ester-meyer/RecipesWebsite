@@ -38,10 +38,6 @@ export default function SignUpForm() {
                     <Input type="text" {...register("name", { required: "name is requured" })} />
                     {errors.name && <span>{errors.name.message}</span>}
                 </FormControl>
-                {/* <FormControl required>
-                    <FormLabel>Email</FormLabel>
-                    <Input type="email" {...register("email")} />
-                </FormControl> */}
                 <FormControl error={!!errors.email}>
                     <FormLabel>Email</FormLabel>
                     <Input
@@ -66,10 +62,6 @@ export default function SignUpForm() {
                     />
                     {errors.email && <span>{errors.email.message}</span>}
                 </FormControl>
-                {/* <FormControl required>
-                     <FormLabel>Password</FormLabel>
-                    <Input type="password" name="password" />
-                </FormControl> */}
                 <FormControl error={!!errors.password}>
                     <FormLabel>Password</FormLabel>
                     <Input
