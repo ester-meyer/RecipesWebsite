@@ -13,7 +13,13 @@ import { useDispatch } from "react-redux"
 
 export default function SignUpForm() {
 
-    const { register, handleSubmit , formState: { errors }} = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        defaultValues: {
+            name: '', 
+            email: '', 
+            password : '',
+        },
+    })
     const navigate = useNavigate()
 
     const dispatch = useDispatch()
@@ -22,14 +28,12 @@ export default function SignUpForm() {
         dispatch(createUser(data));
         navigate('/RecipeList');
     };
-    // name:"not-connected",
-    // email:"",
-    // password:""
+
     return (
 
         <Stack sx={{ gap: 4, mt: 2 }}>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <FormControl>
+                <FormControl error={!!errors.name}>
                     <FormLabel>Name</FormLabel>
                     <Input type="text" {...register("name", { required: "name is requured" })} />
                     {errors.name && <span>{errors.name.message}</span>}
@@ -41,6 +45,17 @@ export default function SignUpForm() {
                 <FormControl error={!!errors.email}>
                     <FormLabel>Email</FormLabel>
                     <Input
+                        sx={{
+                            '& .MuiInput-underline:before': {
+                                borderBottom: '1px solid rgba(0, 0, 0, 0.42)', // צבע ברירת מחדל
+                            },
+                            '& .MuiInput-underline:after': {
+                                borderBottom: '1px solid rgb(208, 0, 64)', // צבע כאשר בפוקוס
+                            },
+                            '&:focus': {
+                                outline: 'none',
+                            },
+                        }}
                         {...register("email", {
                             required: "Email is required",
                             pattern: {
